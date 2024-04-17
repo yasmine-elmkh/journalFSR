@@ -78,8 +78,20 @@ const signIn = async (req, res) => {
         })
 } }  
 
+const getUserById = async (req, res) => {
+    try{
 
+
+        
+    }catch(err){
+        console.log(err)
+        return res.status(404).json({
+            message: "Server Error"
+        })
+    }
+}
 module.exports = {
     signUp ,
-    signIn
+    signIn,
+    getUserById
 }

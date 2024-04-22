@@ -1,9 +1,8 @@
 const express = require("express")
-const { signUp, signIn } = require("../controllers/userControllers")
+const { getUserById } = require("../controllers/userControllers")
 
 const router = express.Router()
 
-router.post("/create", signUp)
-router.post("/signin", signIn)
+router.get("/user-by-id/:userId", getUserById) //on a ajoute la var dans path --> c'est params 
 
-module.exports = router
+module.exports = router 

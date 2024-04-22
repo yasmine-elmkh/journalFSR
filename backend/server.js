@@ -15,9 +15,16 @@ app.use(bodyParser.json())
 
 
 // routes
+const authRoutes = require('./routes/authRoutes')
 const userRoutes = require('./routes/userRoutes')
+const articleRoutes = require('./routes/articleRoutes')
+const adminRoutes = require('./routes/adminRoutes')
 
+app.use("/api/auth", authRoutes)
 app.use("/api/user", userRoutes)
+app.use("/api/article",articleRoutes)
+app.use("/api/admin",adminRoutes)
+
 
 app.get("/",async (req, res) => {
     return res.send("Sever is running ... !!!!!")

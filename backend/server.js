@@ -19,11 +19,13 @@ const authRoutes = require('./routes/authRoutes')
 const userRoutes = require('./routes/userRoutes')
 const articleRoutes = require('./routes/articleRoutes')
 const adminRoutes = require('./routes/adminRoutes')
+const categoryRoutes = require('./routes/categoryRoutes')
 
 app.use("/api/auth", authRoutes)
 app.use("/api/user", userRoutes)
 app.use("/api/article",articleRoutes)
 app.use("/api/admin",adminRoutes)
+app.use("/api/category",categoryRoutes)
 
 
 app.get("/",async (req, res) => {

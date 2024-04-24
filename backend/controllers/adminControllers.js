@@ -4,17 +4,25 @@ const User = require('../models/userModels')
 //dropUserById
 const deleteUserById = async (req,res)=>{
     try{
-        const userId = req.body.id
-        if(!isValidObjectId(userId)){
+        const userId = req.body.userId
+        const userDeleteId = req.body.userDeleteId
+        if(!isValidObjectId(userId) || !isValidObjectId(userDeleteId)){
             return res.status(400).json({
-                message:"user id not valid!"
+                message:"user id or user for delele id not valid!"
             })
         }
-        const deletedUser = await User.findByIdAndDelete(userId)
+        const admin = await User.findById(userId);
+    
+            if (!admin || admin.role !== "admin") {
+                return res.status(401).json({
+                    message: "You must be the admin!"
+                });
+            }
+        const deletedUser = await User.findByIdAndDelete(userDeleteId)
 
         if(!deletedUser){
             return res.status(401).json({
-                message:"user ....!"
+                message:"user did not deleted!"
             })
         }
 
@@ -49,8 +57,6 @@ const getUsers = async (req,res) => {
         })
     }
 }
-//updateUser
-
 
 module.exports = {
     deleteUserById,

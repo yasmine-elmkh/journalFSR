@@ -3,9 +3,9 @@ const Article = require("../models/articleModels");
 //postArticle
 const postArticle = async (req,res)=>{
     try{
-        const {title, description, owner} = req.body
+        const {title, description, owner , category} = req.body
 
-        if(!title || !description || !owner){
+        if(!title || !description || !owner || !category){
             return res.status(401).json({
                 message: "all fields are required!"
             })
@@ -45,7 +45,8 @@ const getArticleById = async (req,res)=>{
         }
 
       const findArticleById = await Article.findById(articleId)
-                                               .populate("owner", "_id name") // katmchi l owner u katsift lina les parametres li 3tinaha fl arg2
+                                                    .populate("owner","_id name")
+                                               
       
         if(!findArticleById){
 
@@ -61,7 +62,6 @@ const getArticleById = async (req,res)=>{
         })
     }
 }
-//dropeArticle
 
 //dropeArticaleById
 const dropeArticaleById = async (req,res)=>{
@@ -84,7 +84,7 @@ const dropeArticaleById = async (req,res)=>{
     }
 }
 //showAllArticles
-const showAllArticles = async (req,res)=>{
+const showAllArticles = async (_req,res)=>{
     try{
     const allArticles = await Article.find()
 

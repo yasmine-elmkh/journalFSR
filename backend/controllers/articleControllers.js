@@ -15,6 +15,7 @@ const postArticle = async (req,res)=>{
          title,
          description,
          owner,
+         category
         })
 
         if(!article) return res.status(401).json({
@@ -64,16 +65,28 @@ const getArticleById = async (req,res)=>{
 }
 
 //dropeArticaleById
-const dropeArticaleById = async (req,res)=>{
+const deleteArticaleById = async (req,res)=>{
     try{
         const articleId=req.params.articleId
+
         if(!articleId)
         return res.status(400).json({
         message:"all fields must be grab!"
         })
     
-        const findArticleById = await Article.findByIdAndDelete(articleId)
-        res.json({
+
+        if(!isValidObjectId(articleId)){
+            return res.status(402).json({
+                message:"article id not valid!"
+            })
+         }
+
+        const dropeArticleById = await Article.findByIdAndDelete(articleId)
+        if(!dropeArticleById)
+        res.status(402).json({
+          message:"the article didn't exist!"
+        })
+        res.status(200).json({
             message:"the article is deleted"
         })
     }catch(Error){  
@@ -134,7 +147,7 @@ const updateArticle = async (req, res) => {
 module.exports = {
     getArticleById,
     postArticle,
-    dropeArticaleById,
+    deleteArticaleById,
     showAllArticles,
     updateArticle
 }

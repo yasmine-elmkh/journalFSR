@@ -110,7 +110,7 @@ const updateCategory = async (req, res) => {
         }
 
         const category = await Category.findById(categoryId)
-        title,
+        category.title = title,
 
         await category.save();
 

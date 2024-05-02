@@ -1,26 +1,26 @@
 const { isValidObjectId } = require('mongoose')
 const User = require('../models/userModels')
 
-//dropUserById
+// -- deleteUserById --
 const deleteUserById = async (req,res)=>{
     try{
+        const adminId = req.body.adminId
         const userId = req.body.userId
-        const userDeleteId = req.body.userDeleteId
-        if(!isValidObjectId(userId) || !isValidObjectId(userDeleteId)){
+        if(!isValidObjectId(adminId) || !isValidObjectId(userId)){
             return res.status(400).json({
-                message:"user id or user for delele id not valid!"
+                message:"user id not valid!"
             })
         }
-        const admin = await User.findById(userId);
+        const admin = await User.findById(adminId);
     
             if (!admin || admin.role !== "admin") {
                 return res.status(401).json({
                     message: "You must be the admin!"
                 });
             }
-        const deletedUser = await User.findByIdAndDelete(userDeleteId)
+        const deleteUser = await User.findByIdAndDelete(userId)
 
-        if(!deletedUser){
+        if(!deleteUser){
             return res.status(401).json({
                 message:"user did not deleted!"
             })
@@ -58,9 +58,6 @@ const getUsers = async (req,res) => {
     }
 }
 
-const updateUser = async (req,res) => {
-    
-}
 module.exports = {
     deleteUserById,
     getUsers

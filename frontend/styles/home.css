@@ -79,12 +79,13 @@ body {
     width: 100wh;
   
   }
-  .container2 {
-    display: flex; /* Active la mise en page Flexbox */
-    justify-content: center; /* Centre horizontalement */
-    align-items: center; /* Centre verticalement */
-    height: 100vh; /* Hauteur de la fenêtre */
-  }
+  .container {
+    display: flex; /* Use flexbox layout */
+    justify-content: center; /* Center the divs in the container */
+    align-items: center; /* Center the divs vertically in the container */
+    height: 100vh; /* Optional: Set the height of the container to full viewport height */
+}
+
   
   /* La div à centrer */
   .centered-div {

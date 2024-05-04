@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abonnement</title>
+    
+    <link rel="stylesheet" href="./styles/abonnement.css">
+</head>
+
+<body>
+    
+    <div class="flex-container">
+        <img class="site-icon" src="C:\Users\hibab\OneDrive\Bureau\PFE/fsr_logo-removebg-preview.png">
+    <h2 class="welcome-title">Journal De La Fcaulté des Sciences</h2>
+</div>
+
+    <div class="container">
+        <h1>Abonnement au Journal</h1>
+        <form id="abonnement-form" action="./home_page.html" method="POST">
+            <div class="form-group">
+                <label for="name">Nom:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="street">Adresse de rue:</label>
+                <input type="text" id="street" name="street" required>
+            </div>
+            <div class="form-group">
+                <label for="suite">Appartement / Suite:</label>
+                <input type="text" id="suite" name="suite">
+            </div>
+            <div class="form-group">
+                <label for="city">Ville:</label>
+                <input type="text" id="city" name="city" required>
+            </div>
+            <div class="form-group">
+                <label for="state">État / Province:</label>
+                <input type="text" id="state" name="state" required>
+            </div>
+            <div class="form-group">
+                <label for="zip">Code postal:</label>
+                <input type="text" id="zip" name="zip" required>
+            </div>
+            <div class="form-group">
+                <label for="country">Pays:</label>
+                <input type="text" id="country" name="country" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Numéro de téléphone:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="card-number">Numéro de carte:</label>
+                <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456" required>
+            </div>
+            <div class="form-group">
+                <label for="expiration-date">Date d'expiration:</label>
+                <input type="text" id="expiration-date" name="expiration-date" placeholder="MM/YY" required>
+            </div>
+            <div class="form-group">
+                <label for="cvv">Code de sécurité (CVV):</label>
+                <input type="text" id="cvv" name="cvv" placeholder="CVV" required>
+            </div>
+            <div class="form-group">
+                <label for="abonnement-type">Type d'abonnement:</label>
+                <select id="abonnement-type" name="abonnement-type" required>
+                    <option value="standard">Tarif Standard - 100 MAD/mois</option>
+                    <option value="etudiant">Tarif Étudiant - 50 MAD/mois</option>
+                    <option value="journaliste">Tarif Journaliste - 80 MAD/mois</option>
+                </select>
+            </div>
+            <button type="submit" id="subscribe-button" href="./home_page.html">S'abonner</button>
+        </form>
+    </div>
+</body>
+
+</html>

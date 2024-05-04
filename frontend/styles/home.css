@@ -2,413 +2,453 @@
 
 /* Styles de base */
 body {
-    font-family: Arial, sans-serif;
-  }
-  
-  /* Autres styles */
-  
-  
-  /* Masquer la barre de recherche au départ */
-  .search-bar {
-      display: none;
-  }
-  
-  /* Styles pour le bouton de recherche */
-  #search-icon {
-      cursor: pointer;
-      border: none;
-      background: none;
-      font-size: 20px;
-      padding: 5px;
-  }
-  
-  
-  nav {
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-  }
-  
-  nav a {
-    color: white;
-    text-decoration: none;
-    padding: 10px;
-    border-radius: 5px;
-    background-color: #f39c12;
-  }
-  
-  nav a:hover {
-    background-color: #00408b;
-  }
-  
-  main {
-    margin: 20px;
-  }
-  
-  .site-icon {
-      width: 110px; /* Adjust the width as needed */
-      height: 110px; /* Adjust the height as needed */
-      margin-right: 250px; /* Adjust the spacing between the icon and title */
-  }
-  
-  .welcome-title {
-      font-family: 'Garamond', serif;
-      font-size: 40px;
-      font-weight: bold;
-      color: #333;
-      text-align: center;
-      margin-top: 0px;
-      margin-bottom: 10px;
-      color:#18508b;
-      margin-right: 150px;
-  }
-  
-  
-  /* Flexbox container for aligning items horizontally */
-  .flex-container {
-   
-    display: flex; /* Use flexbox to align items horizontally */
-    align-items: center; /* Align items vertically */
-    justify-content: space-between; /* Space items apart */
-    padding: 3px; /* Add padding inside the container */
-    margin: 3px; /* Add margin around the container */
-    border-bottom: 1px solid #ccc;
-    border-radius: 5px; /* Add rounded corners */
-    background-color: #ffffff; /* Light background color for contrast */
-    width: 100wh;
-  
-  }
-  .container {
-    display: flex; /* Use flexbox layout */
-    justify-content: center; /* Center the divs in the container */
-    align-items: center; /* Center the divs vertically in the container */
-    height: 100vh; /* Optional: Set the height of the container to full viewport height */
+  font-family: Arial, sans-serif;
 }
 
-  
-  /* La div à centrer */
-  .centered-div {
-    width: 50%; /* Largeur de la div, ajustez comme souhaité */
-    padding: 20px; /* Ajoute de l'espace à l'intérieur de la div */
-    background-color: #fff9e2; /* Couleur de fond claire */
-    border-radius: 8px; /* Coins arrondis */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre subtile */
-  }
-  .topnav {
-    overflow: hidden;
-    background-color: #ffffff;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000; /* Ensure the navigation stays on top of other content */
-  }
-  
-  /* Style the links inside the navigation bar */
-  .topnav a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 20px;
-    text-decoration: none;
-    font-size: 17px;
-  }
-  
-  /* Change the color of links on hover */
-  .topnav a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-  
-  /* Add an active class to highlight the current page */
-  .active {
-    background-color: #4CAF50;
-    color: white;
-  }
-  /* Style pour le conteneur du bouton */
-  .login-container {
-    text-align: center; /* Centrez le bouton dans le conteneur */
-    margin-top: 0px; /* Espacement supérieur */
-  }
-  
-  /* Style pour le bouton */
-  #login-button {
-    padding: 10px 20px; /* Ajoutez de l'espace à l'intérieur du bouton */
-    background-color: #294285; /* Couleur de fond du bouton */
-    color: white; /* Couleur du texte du bouton */
-    border: none; /* Pas de bordure */
-    border-radius: 5px; /* Arrondissez les coins */
-    font-size: 16px; /* Taille de la police */
-    cursor: pointer; /* Indicateur de clic */
-  }
-  
-  /* Effet d'hover (survol) pour le bouton */
-  #login-button:hover {
-    background-color: #6f90d8; /* Couleur de fond en survol */
-  }
-  /* Styles de base */
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Styles pour le menu de navigation */
-  .navbar {
-    background-color: #333; /* Couleur de fond du menu */
-    padding: 10px; /* Ajoute de l'espace autour des éléments du menu */
-  }
-  
-  .nav-list {
-    list-style-type: none; /* Supprime les puces de liste */
-    margin: 0; /* Supprime la marge par défaut */
-    padding: 0; /* Supprime le padding par défaut */
-    display: flex; /* Dispose les éléments du menu en ligne */
-    justify-content: center; /* Centre les éléments horizontalement */
-  }
-  
-  .nav-list li {
-    margin: 0 0px; /* Ajoute de l'espace entre les éléments du menu */
-    margin-top: 10px;
-  }
-  
-  .nav-list a {
-    color: white; /* Couleur du texte */
-    text-decoration: none; /* Supprime le soulignement */
-    padding: 10.5px 12px; /* Ajoute de l'espace autour du texte */
-  }
-  
-  .nav-list a:hover {
-    background-color: #575757; /* Change la couleur de fond au survol */
-    border-radius: 5px; /* Coins arrondis */
-  }
-  
-  /* Styles pour le sous-menu déroulant */
-  .dropdown {
-    position: relative; /* Permet de positionner le sous-menu */
-  }
-  
-  .dropbtn {
-    cursor: pointer; /* Change le curseur lors du survol */
-  }
-  
-  .dropdown-content {
-    display: none; /* Cache le sous-menu par défaut */
-    position: absolute; /* Positionne le sous-menu absolument */
-    background-color: #333; /* Couleur de fond du sous-menu */
-    
-    z-index: 1; /* Assure que le sous-menu est au-dessus des autres éléments */
-    border-radius: 5px; /* Coins arrondis */
-  }
-  
-  .dropdown-content a {
-    padding: 10px 16px; /* Ajoute de l'espace autour du texte */
-    display: block; /* Affiche chaque élément sur une nouvelle ligne */
-    color: white; /* Couleur du texte */
-  }
-  
-  .dropdown-content a:hover {
-    background-color: #575757; /* Change la couleur de fond au survol */
-  }
-  
-  .dropdown:hover .dropdown-content {
-    display: block; /* Affiche le sous-menu lors du survol */
-  }
-  
-  /* Styles pour la liste des articles */
-  .articles-list {
-    width: 20%; /* Ajuste la largeur de la liste selon vos besoins */
-    margin: 0; /* Enlève la marge par défaut */
-    padding: 10px; /* Ajoute de l'espace à l'intérieur de la liste */
-    float: left; /* Aligne la liste à gauche de la page */
-    list-style: none; /* Enlève les puces de liste */
-    margin-left: 100px;
-  }
-  
-  /* Styles pour chaque article */
-  .articles-list .article {
-    margin-bottom: 15px; /* Ajoute de l'espace entre les articles */
-    border: 1px solid #ffffff; /* Ajoute une bordure pour séparer chaque article */
-    padding: 0px; /* Ajoute de l'espace à l'intérieur de chaque article */
-    border-radius: 5px; /* Ajoute des coins arrondis aux articles */
-    background-color: #ffffff; /* Couleur de fond claire pour les articles */
-  }
-  
-  /* Styles pour les images des articles */
-  .articles-list .article-image img {
-    max-width: 100%; /* Adapte la taille de l'image à celle de son conteneur */
-    height: auto;
-    display: block;
-    margin-bottom: 10px;
-  }
-  
-  /* Styles pour les titres des articles */
-  .articles-list .article-heading {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 0px;
-  }
-  
-  /* Styles pour les descriptions des articles */
-  .articles-list .article-description {
-    font-size: 14px;
-    color: #666;
-  }
-  /* Styles pour header-right */
-  
-  .header-right {
-    position: absolute; /* Positionne le conteneur absolument */
-    right: 0; /* Aligne le conteneur à droite de la page */
-    width: 20%; /* Ajuste la largeur selon vos préférences */
-    height: 100vh; /* Hauteur de la page */
-    overflow-x: auto; /* Ajoute un défilement vertical si le contenu dépasse la hauteur */
-    padding: 1px; /* Ajoute de l'espace à l'intérieur du conteneur */
-    background-color: #000000; /* Couleur de fond */
-    margin-right: 120px;
-    margin-top:10px ;/* Place le conteneur en haut de la page */
-    
-  }
-  
-  /* Styles pour les éléments à l'intérieur de header-right */
-  .header-right .widget-box {
-    padding: 2%; /* Ajoute de l'espace à l'intérieur du widget */
-    background-color: #dec9c9; /* Couleur de fond */
-  }
-  
-  .header-right .widget-heading a {
-    color: #000000; /* Couleur du texte */
-    font-weight: bold;
-    text-decoration: none;
-    width:82%;
-  }
-  
-  .header-right .articles-list {
-    list-style-type: none; /* Enlève les puces de la liste */
-    padding: 0;
-    margin: 0;
-  }
-  
-  .header-right .article {
-    padding: 100px;
-    margin-bottom: 1px; /* Ajoute de l'espace entre les articles */
-    background-color: #ffffff; /* Couleur de fond des articles */
-    border: 25px solid #ffffff; /* Bordure des articles */
-    border-radius: 2px; /* Coins arrondis */
-    width:30%;
-  }
-  
-  .header-right .article-heading a {
-    font-family: 'Times New Roman', Times, serif;
-    color: #123860; /* Couleur des liens */
-    font-weight: bold;
-    font-size: 10px;
-    border: 20px;
-    
-  }
-  
-  .header-right .bloc-tbn a {
-    display: block;
-    padding: 10px;
-    background-color: #007bff; /* Couleur de fond du bouton */
-    color: white; /* Couleur du texte du bouton */
-    text-align: center;
-    text-decoration: none;
-    border-radius: 5px; /* Coins arrondis */
-    margin-top: 10px;
-  }
-  
-  .header-right .bloc-tbn a:hover {
-    background-color: #0056b3; /* Couleur de fond du bouton au survol */
-  }
-  /* Styles pour centrer le .row */
-  /* Styles pour le conteneur de la ligne */
-  .row {
-    display: flex;
-    flex-direction: column; /* Dispose les enfants verticalement */
-    align-items: center; /* Centre les enfants horizontalement */
-    justify-content: center; /* Centre les enfants verticalement */
-    width: 40%; /* Définit la largeur à 30% de la page */
-    margin: 0 auto; /* Centre l'élément .row dans la page */
-    padding: 10px; /* Ajoute de l'espace autour de l'élément */
-    background-color: #f9f9f9; /* Couleur de fond douce */
-    border-radius: 10px; /* Coins arrondis */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre subtile */
-    margin-right: 500px;
-    margin-top: 11px;
-  }
-  
-  /* Styles pour l'en-tête de l'article */
-  .article-header {
-    width: 100%; /* Largeur de 100% pour l'en-tête de l'article */
-    text-align: center; /* Centre le contenu */
-    margin-bottom: 10px; /* Ajoute de l'espace entre l'en-tête et le contenu */
-  }
-  
-  /* Styles pour l'image de l'article */
-  .article-image img {
-    width: 100%; /* Largeur de 100% pour l'image */
-    height: auto; /* Ajuste la hauteur automatiquement */
-    border-radius: 5px; /* Coins arrondis pour l'image */
-  }
-  
-  /* Styles pour le contenu de l'article */
-  .article-content {
-    width: 100%; /* Largeur de 100% pour le contenu */
-    text-align: left; /* Texte aligné à gauche */
-    padding: 1px; /* Ajoute de l'espace vertical */
-  }
-  
-  /* Styles pour la catégorie de l'article */
-  .article-meta a {
-    color: #18508b; /* Couleur de texte pour la catégorie */
-    font-weight: bold; /* Texte en gras */
-    text-decoration: none; /* Supprime le soulignement */
-    margin-bottom: 5px; /* Ajoute de l'espace entre la catégorie et le titre */
-  }
-  
-  /* Styles pour le titre de l'article */
-  .article-heading a {
-    color: #333; /* Couleur du texte pour le titre */
-    font-size: 1.2em; /* Taille de police légèrement plus grande */
-    text-decoration: none; /* Supprime le soulignement */
-    font-weight: bold; /* Texte en gras */
-    margin-bottom: 10px; /* Ajoute de l'espace entre le titre et la description */
-  }
-  .article-heading2 a {
-    color: #333; /* Couleur du texte pour le titre */
-    font-size: 1.8em; /* Taille de police légèrement plus grande */
-    font-family: 'Playfair Display', serif;;
-    text-decoration: none; /* Supprime le soulignement */
-    font-weight: bold; /* Texte en gras */
-    margin-bottom: 10px; /* Ajoute de l'espace entre le titre et la description */
-  }
-  
-  /* Styles pour la description de l'article */
-  .article-description {
-    color: #666; /* Couleur du texte pour la description */
-    font-size: 0.9em; /* Taille de police légèrement plus petite */
-    line-height: 1.5; /* Espacement des lignes pour la lisibilité */
-  }
-  /* Styles for the button */
-  .button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #007bff; /* Blue color */
-    color: white;
-    border: none;
-    border-radius: 4px;
-    text-decoration: none; /* Remove underline */
-    font-size: 16px;
+/* Autres styles */
+
+
+/* Masquer la barre de recherche au départ */
+.search-bar {
+    display: none;
+}
+
+/* Styles pour le bouton de recherche */
+#search-icon {
     cursor: pointer;
+    border: none;
+    background: none;
+    font-size: 20px;
+    padding: 5px;
+}
+
+
+nav {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f39c12;
+}
+
+nav a:hover {
+  background-color: #00408b;
+}
+
+main {
+  margin: 20px;
+}
+
+.site-icon {
+    width: 110px; /* Adjust the width as needed */
+    height: 110px; /* Adjust the height as needed */
+    margin-right: 250px; /* Adjust the spacing between the icon and title */
+}
+
+.welcome-title {
+    font-family: 'Garamond', serif;
+    font-size: 40px;
+    font-weight: bold;
+    color: #333;
     text-align: center;
-  }
+    margin-top: 0px;
+    margin-bottom: 10px;
+    color:#18508b;
+    margin-right: 150px;
+}
+
+
+/* Flexbox container for aligning items horizontally */
+.flex-container {
+ 
+  display: flex; /* Use flexbox to align items horizontally */
+  align-items: center; /* Align items vertically */
+  justify-content: space-between; /* Space items apart */
+  padding: 3px; /* Add padding inside the container */
+  margin: 3px; /* Add margin around the container */
+  border-bottom: 1px solid #ccc;
+  border-radius: 5px; /* Add rounded corners */
+  background-color: #ffffff; /* Light background color for contrast */
+  width: 100wh;
+
+}
+
+/* La div à centrer */
+.centered-div {
+  width: 50%; /* Largeur de la div, ajustez comme souhaité */
+  padding: 20px; /* Ajoute de l'espace à l'intérieur de la div */
+  background-color: #fff9e2; /* Couleur de fond claire */
+  border-radius: 8px; /* Coins arrondis */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre subtile */
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #ffffff;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000; /* Ensure the navigation stays on top of other content */
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add an active class to highlight the current page */
+.active {
+  background-color: #4CAF50;
+  color: white;
+}
+/* Style pour le conteneur du bouton */
+.login-container {
+  text-align: center; /* Centrez le bouton dans le conteneur */
+  margin-top: 0px; /* Espacement supérieur */
+}
+
+/* Style pour le bouton */
+#login-button {
+  padding: 10px 20px; /* Ajoutez de l'espace à l'intérieur du bouton */
+  background-color: #294285; /* Couleur de fond du bouton */
+  color: white; /* Couleur du texte du bouton */
+  border: none; /* Pas de bordure */
+  border-radius: 5px; /* Arrondissez les coins */
+  font-size: 16px; /* Taille de la police */
+  cursor: pointer; /* Indicateur de clic */
+}
+
+/* Effet d'hover (survol) pour le bouton */
+#login-button:hover {
+  background-color: #6f90d8; /* Couleur de fond en survol */
+}
+/* Styles de base */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Styles pour le menu de navigation */
+.navbar {
+  background-color: #333; /* Couleur de fond du menu */
+  padding: 10px; /* Ajoute de l'espace autour des éléments du menu */
+}
+
+.nav-list {
+  list-style-type: none; /* Supprime les puces de liste */
+  margin: 0; /* Supprime la marge par défaut */
+  padding: 0; /* Supprime le padding par défaut */
+  display: flex; /* Dispose les éléments du menu en ligne */
+  justify-content: center; /* Centre les éléments horizontalement */
+}
+
+.nav-list li {
+  margin: 0 0px; /* Ajoute de l'espace entre les éléments du menu */
+  margin-top: 10px;
+}
+
+.nav-list a {
+  color: white; /* Couleur du texte */
+  text-decoration: none; /* Supprime le soulignement */
+  padding: 10.5px 12px; /* Ajoute de l'espace autour du texte */
+}
+
+.nav-list a:hover {
+  background-color: #575757; /* Change la couleur de fond au survol */
+  border-radius: 5px; /* Coins arrondis */
+}
+
+/* Styles pour le sous-menu déroulant */
+.dropdown {
+  position: relative; /* Permet de positionner le sous-menu */
+}
+
+.dropbtn {
+  cursor: pointer; /* Change le curseur lors du survol */
+}
+
+.dropdown-content {
+  display: none; /* Cache le sous-menu par défaut */
+  position: absolute; /* Positionne le sous-menu absolument */
+  background-color: #333; /* Couleur de fond du sous-menu */
   
-  .button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-  }
+  z-index: 1; /* Assure que le sous-menu est au-dessus des autres éléments */
+  border-radius: 5px; /* Coins arrondis */
+}
+
+.dropdown-content a {
+  padding: 10px 16px; /* Ajoute de l'espace autour du texte */
+  display: block; /* Affiche chaque élément sur une nouvelle ligne */
+  color: white; /* Couleur du texte */
+}
+
+.dropdown-content a:hover {
+  background-color: #575757; /* Change la couleur de fond au survol */
+}
+
+.dropdown:hover .dropdown-content {
+  display: block; /* Affiche le sous-menu lors du survol */
+}
+
+/* Styles pour la liste des articles */
+.articles-list {
+  /* Ajuste la largeur de la liste selon vos besoins */
+  margin: 0; /* Enlève la marge par défaut */
+  padding: 5px; /* Ajoute de l'espace à l'intérieur de la liste */
+  /* Aligne la liste à gauche de la page */
+  list-style: none; /* Enlève les puces de liste */
   
+}
+
+/* Styles pour chaque article */
+.articles-list .article {
+  margin-bottom: 10px; /* Ajoute de l'espace entre les articles */
+  border: 1px solid #ffffff; /* Ajoute une bordure pour séparer chaque article */
+  padding: 0px; /* Ajoute de l'espace à l'intérieur de chaque article */
+  border-radius: 5px; /* Ajoute des coins arrondis aux articles */
+  background-color: #ffffff; /* Couleur de fond claire pour les articles */
+}
+
+/* Styles pour les images des articles */
+.articles-list .article-image img {
+  max-width: 100%; /* Adapte la taille de l'image à celle de son conteneur */
+  height: auto;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Styles pour les titres des articles */
+.articles-list .article-heading {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+
+/* Styles pour les descriptions des articles */
+.articles-list .article-description {
+  font-size: 14px;
+  color: #666;
+}
+/* Styles pour header-right */
+
+.header-right {
+  position: absolute; /* Positionne le conteneur absolument */
+  right: 0; /* Aligne le conteneur à droite de la page */
+  width: 20%; /* Ajuste la largeur selon vos préférences */
+  height: 100vh; /* Hauteur de la page */
+  overflow-x: auto; /* Ajoute un défilement vertical si le contenu dépasse la hauteur */
+  padding: 1px; /* Ajoute de l'espace à l'intérieur du conteneur */
+  background-color: #000000; /* Couleur de fond */
+  margin-right: 120px;
+  margin-top:10px ;/* Place le conteneur en haut de la page */
   
+}
+
+/* Styles pour les éléments à l'intérieur de header-right */
+.header-right .widget-box {
+  padding: 2%; /* Ajoute de l'espace à l'intérieur du widget */
+  background-color: #dec9c9; /* Couleur de fond */
+}
+
+.header-right .widget-heading a {
+  color: #000000; /* Couleur du texte */
+  font-weight: bold;
+  text-decoration: none;
+  width:82%;
+}
+
+.header-right .articles-list {
+  list-style-type: none; /* Enlève les puces de la liste */
+  padding: 0;
+  margin: 0;
+}
+
+.header-right .article {
+  padding: 100px;
+  margin-bottom: 1px; /* Ajoute de l'espace entre les articles */
+  background-color: #ffffff; /* Couleur de fond des articles */
+  border: 25px solid #ffffff; /* Bordure des articles */
+  border-radius: 2px; /* Coins arrondis */
+  width:30%;
+}
+
+.header-right .article-heading a {
+  font-family: 'Times New Roman', Times, serif;
+  color: #123860; /* Couleur des liens */
+  font-weight: bold;
+  font-size: 10px;
+  border: 20px;
   
+}
+
+.header-right .bloc-tbn a {
+  display: block;
+  padding: 10px;
+  background-color: #007bff; /* Couleur de fond du bouton */
+  color: white; /* Couleur du texte du bouton */
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px; /* Coins arrondis */
+  margin-top: 10px;
+}
+
+.header-right .bloc-tbn a:hover {
+  background-color: #0056b3; /* Couleur de fond du bouton au survol */
+}
+/* Styles pour centrer le .row */
+/* Styles pour le conteneur de la ligne */
+.row {
+  display: flex;
+  flex-direction: column; /* Dispose les enfants verticalement */
+  align-items: center; /* Centre les enfants horizontalement */
+  justify-content: center; /* Centre les enfants verticalement */
+  width: 40%; /* Définit la largeur à 30% de la page */
+  margin: 0 auto; /* Centre l'élément .row dans la page */
+  padding: 10px; /* Ajoute de l'espace autour de l'élément */
+  background-color: #f9f9f9; /* Couleur de fond douce */
+  border-radius: 10px; /* Coins arrondis */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre subtile */
+  margin-right: 500px;
+  margin-top: 11px;
+}
+
+/* Styles pour l'en-tête de l'article */
+
+
+/* Styles pour l'image de l'article */
+.article-image img {
+  width: 100%; /* Largeur de 100% pour l'image */
+  height: auto; /* Ajuste la hauteur automatiquement */
+  border-radius: 5px; /* Coins arrondis pour l'image */
+}
+
+/* Styles pour le contenu de l'article */
+.article-content {
+  width: 100%; /* Largeur de 100% pour le contenu */
+  text-align: left; /* Texte aligné à gauche */
+  padding: 1px; /* Ajoute de l'espace vertical */
+}
+
+/* Styles pour la catégorie de l'article */
+.article-meta a {
+  color: #1c2631; /* Couleur de texte pour la catégorie */
+  font-weight: bold; /* Texte en gras */
+  text-decoration: none; /* Supprime le soulignement */
+  margin-bottom: 5px; /* Ajoute de l'espace entre la catégorie et le titre */
+}
+
+/* Styles pour le titre de l'article */
+.article-heading a {
+  color: #333; /* Couleur du texte pour le titre */
+  font-size: 1.2em; /* Taille de police légèrement plus grande */
+  text-decoration: none; /* Supprime le soulignement */
+  font-weight: bold; /* Texte en gras */
+  margin-bottom: 10px; /* Ajoute de l'espace entre le titre et la description */
+}
+.article-heading2 a {
+  color: #333; /* Couleur du texte pour le titre */
+  font-size: 1.8em; /* Taille de police légèrement plus grande */
+  font-family: 'Playfair Display', serif;;
+  text-decoration: none; /* Supprime le soulignement */
+  font-weight: bold; /* Texte en gras */
+  margin-bottom: 10px; /* Ajoute de l'espace entre le titre et la description */
+}
+
+/* Styles pour la description de l'article */
+.article-description {
+  color: #666; /* Couleur du texte pour la description */
+  font-size: 0.9em; /* Taille de police légèrement plus petite */
+  line-height: 1.5; /* Espacement des lignes pour la lisibilité */
+}
+/* Styles for the button */
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff; /* Blue color */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none; /* Remove underline */
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+
+/* Style for the container */
+.container {
+  display: flex; /* Use flexbox layout */
+  justify-content: center; /* Center the divs in the container */
+  align-items: center; /* Center the divs vertically in the container */
+  height: 90vh; /* Optional: Set the height of the container to full viewport height */
+
+  width: 80%;
+  margin-left: 150px;
   
-  /* -------------- index style -------------- */
+}
+
+/* Style for the left div */
+.div-left {
+   /* Set width to 25% */
+  text-align: center; /* Center text in the div */
+  padding: 2px; /* Add padding to the div */
+  background-color: rgb(255, 250, 250); /* Optional: Set a background color */
+  margin: top 0px;;
+  height: 100%;
+  width: 90%;
+ 
+  
+
+}
+.div-center {
+   width: 220%;/* Set width to 50% */
+  text-align: center; /* Center text in the div */
+  padding: 2px; /* Add padding to the div */
+  background-color: rgb(255, 255, 255); /* Optional: Set a background color */
+  margin-right: 0px;
+  margin-bottom: auto;
+  height: 95%;
+}
+.div-right {
+  /* Set width to 25% */
+  text-align: center; /* Center text in the div */
+  padding: 2px; /* Add padding to the div */
+  background-color: rgb(240, 220, 220); /* Optional: Set a background color */
+  
+  height: 95%;
+  width: 90%;
+}
+
+/* Style for the center div */
+
+
+.article-header {
+  width: 100%; /* Largeur de 100% pour l'en-tête de l'article */
+  text-align: center; /* Centre le contenu */
+  margin-bottom: 10px; 
+  /* Ajoute de l'espace entre l'en-tête et le contenu */
+}

@@ -452,3 +452,34 @@ body {
   margin-bottom: 10px; 
   /* Ajoute de l'espace entre l'en-tête et le contenu */
 }
+
+.contact-info {
+  padding: 20px;
+  border-top: 1px solid #cccccc;
+  background-color: #ded0d0;
+  align-items: center;
+  display: flex;
+}
+
+.contact-info h2 {
+  margin-top: 0;
+}
+
+.contact-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-info ul li {
+  margin-bottom: 10px;
+}
+
+.contact-info a {
+  color: #007BFF;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}

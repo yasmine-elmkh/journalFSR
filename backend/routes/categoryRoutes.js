@@ -12,10 +12,4 @@ router.get("/allCategory",getAllCategory)
 
 
 
-
-
-
-
-
-
 module.exports = router

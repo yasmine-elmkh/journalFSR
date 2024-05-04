@@ -4,7 +4,7 @@ const User = require("../models/userModels");
 const signUp = async (req, res) => {
     try{
         const {firstName, lastName, email, role, password} = req.body;
-        console.log()
+        console.log(firstName, lastName, email, role, password)
          
         if(!password || !role || !email || !firstName || !lastName){
             return res.status(400).json({
@@ -14,13 +14,13 @@ const signUp = async (req, res) => {
         const matchedUser = await User.findOne({email});
 
         if(matchedUser){
-            return res.status(400).json({
+            return res.status(401).json({
                 message: "email already exist!"
             })
         }
 
         const user = new User({
-            lastName,
+            firstName,
             lastName,
             email, 
             password,

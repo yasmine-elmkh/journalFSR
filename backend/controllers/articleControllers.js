@@ -23,7 +23,7 @@ const postArticle = async (req,res)=>{
         })
         
         await article.save()
-
+ 
         res.status(200).json({
             message: "article created!"
         })
@@ -40,13 +40,13 @@ const getArticleById = async (req,res)=>{
         const articleId = req.params.articleId
         if(!isValidObjectId(articleId)){
 
-            return res.status(401).json({
+            return res.status(403).json({
                 message: "Id not valid!"
             })
         }
 
       const findArticleById = await Article.findById(articleId)
-                                                    .populate("owner","_id name")
+                                            .populate("owner","_id name")
                                                
       
         if(!findArticleById){
@@ -55,7 +55,7 @@ const getArticleById = async (req,res)=>{
                 message: "article not found!!"
             })
         }
-        res.status(200).json(findArticleById)
+        return res.status(200).json(findArticleById)
     }catch(Error){  
         console.log(Error)
         return res.status(404).json({
@@ -97,9 +97,12 @@ const deleteArticaleById = async (req,res)=>{
     }
 }
 //showAllArticles
-const showAllArticles = async (_req,res)=>{
+const showAllArticles = async (req,res)=>{
     try{
-    const allArticles = await Article.find()
+        const allArticles = await Article.find()
+                                        .sort({ createdAt: -1 })
+                                        .limit(5);
+        console.log(allArticles); 
 
     if(!allArticles || allArticles.length < 1){
         return res.status(403).json({
@@ -144,9 +147,48 @@ const updateArticle = async (req, res) => {
     }
 }
 
+const lastArticles = async (req, res) => {
+    try{
+
+        const a = await Article.find({category: "66284fe6df12cca6456100d2"})
+                                .sort({ createdAt: -1 })
+                                .limit(1)
+                                .populate("category","_id title")
+
+        const b = await Article.find({category: "6628525a04532782b7b26d52"})
+                                .sort({ createdAt: -1 })
+                                .limit(1)
+                                .populate("category","_id title")
+
+        const c = await Article.find({category: "663140a9610d2403890eada4"})
+                                .sort({ createdAt: -1 })
+                                .limit(1)
+                                .populate("category","_id title")
+
+        let lastArticleArr = []
+        if(a || a.length > 0){
+            lastArticleArr = [...lastArticleArr, ...a]
+        }
+
+        if(b || b.length > 0){
+            lastArticleArr = [...lastArticleArr, ...b]
+        }
+
+        if(c || c.length > 0){
+            lastArticleArr = [...lastArticleArr, ...c]
+        }
+        
+        console.log(lastArticleArr)
+
+        res.status(200).json(lastArticleArr)
+    }catch(err){
+
+    }
+}
 module.exports = {
     getArticleById,
     postArticle,
+    lastArticles,
     deleteArticaleById,
     showAllArticles,
     updateArticle

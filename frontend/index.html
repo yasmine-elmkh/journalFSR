@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/index.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
+    <style>
+        .dropdown-toggle::after {
+            display: none;
+        }
+    </style>
     <title>Document</title>
 </head>
 <body>
@@ -22,10 +26,33 @@
                 <a class="nav-link active" aria-current="page" href="/">Accueil</a>
               </li>
             </ul>
-            <form class="d-flex">
-                <a type="button" href="./login.html" style="color: black;" class="nav-btn">signIn</a>
-                <a type="button" href="./register.html" class="btn nav-btn btn-dark mx-1">register</a>
-            </form>
+            <!-- <button style="background-color: #444444; padding: 8px 15px; border-radius: 50%;" class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="bi bi-person-circle"></i>
+            </button> -->
+
+
+            <div id="user-nav-toggle" class="dropdown mx-2">
+                <button  style="border: 0; padding: 0;" class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+                      </svg>
+                </button>
+                <div style="margin-left: -110px;" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a style="font-size: 13px;" class="dropdown-item" href="#">Profile</a>
+                    <a style="font-size: 13px;" class="dropdown-item" href="#">abounez-vous</a>
+                    <a id="logout-btn" style="font-size: 13px;" class="dropdown-item">logOut</a>
+                </div>
+            </div>
+
+
+            <div id="auth-btns">
+                <form class="d-flex">
+                    <a type="button" href="./login.html" style="color: black;" class="nav-btn">signIn</a>
+                    <a type="button" href="./register.html" class="btn nav-btn btn-dark mx-1">register</a>
+                </form>
+            </div>
+
           </div>
         </div>
       </nav>
@@ -33,14 +60,8 @@
 
     <!-- categories -->
     <section class="category container">
-        <ul class="category-list">
-            <li class="category-list-item">CATEGORY</li>
-            <li class="category-list-item">CATEGORY</li>
-            <li class="category-list-item">CATEGORY</li>
-            <li class="category-list-item">CATEGORY</li>
-            <li class="category-list-item">CATEGORY</li>
-            <li class="category-list-item">CATEGORY</li>
-            <li class="category-list-item">CATEGORY</li>
+        <ul style="width: 70%; margin: 20px auto; border-bottom: 1px solid lightgray; padding-bottom: 30px;" class="category-list" id="category-list">
+            <li class="category-list-item">category loading ...</li>
         </ul>
     </section>
     <!-- categories end-->
@@ -48,53 +69,29 @@
     <!-- main section -->
     <section class="main container">
         <div class="main-content">
+          <!-- leftsection -->
             <div class="main-left-section">
                 <div class="last-post-by-category">
                     <div class="last-post-by-category-item">
-                        <img class="last-post-image-by-category" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYzecrS2hzwe5iqglv-Z7UpnaSwuqshPVCEQ&usqp=CAU" alt="">
-                        <span class="category-name">category title</span>
-                        <p class="last-post-title-by-category">Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet.</p>
+                       Loading ...
                     </div>
-                    <div class="last-post-by-category-item">
-                        <img class="last-post-image-by-category" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYzecrS2hzwe5iqglv-Z7UpnaSwuqshPVCEQ&usqp=CAU" alt="">
-                        <span class="category-name">category title</span>
-                        <p class="last-post-title-by-category">Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet.</p>
-                    </div>
-                    <div class="last-post-by-category-item">
-                        <img class="last-post-image-by-category" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYzecrS2hzwe5iqglv-Z7UpnaSwuqshPVCEQ&usqp=CAU" alt="">
-                        <span class="category-name">category title</span>
-                        <p class="last-post-title-by-category">Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet.</p>
-                    </div>
+                    
                 </div>
             </div>
+            <!-- mainsection -->
             <div class="main-mid-section">
-                <div class="main-mid-section-content">
+              loading ...!
+                <!-- <div class="main-mid-section-content">
                     <img class="main-mid-item main-mid-img" src="https://ca-times.brightspotcdn.com/dims4/default/d1f506d/2147483647/strip/true/crop/5807x3871+1+0/resize/840x560!/format/webp/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F42%2Fe3%2F5731c20848a69999c9dea1b06bed%2F939111-me-usc-posthumous-degrees-gxc-0482.jpg" alt="">
                     <h3 class="main-mid-item main-mid-title">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae, ex.</h3>
                     <p class="main-mid-item main-mid-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non suscipit placeat corrupti esse neque tenetur libero eveniet recusandae, nemo aliquam commodi maxime molestiae, sapiente quod voluptates itaque voluptatum alias autem nisi tempore optio numquam molestias. Quisquam nobis saepe quidem tempora!</p>
-                </div>
+                </div> -->
             </div>
+            <!-- rightsection -->
             <div class="main-right-section">
                 <h4 class="main-right-section-title">Instant T</h4>
-                <div class="main-right-item">
-                    <p class="main-right-item-time">10:00</p>
-                    <p class="main-right-item-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi, laborum?</p>
-                </div>
-                <div class="main-right-item">
-                    <p class="main-right-item-time">10:00</p>
-                    <p class="main-right-item-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi, laborum?</p>
-                </div>
-                <div class="main-right-item">
-                    <p class="main-right-item-time">10:00</p>
-                    <p class="main-right-item-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi, laborum?</p>
-                </div>
-                <div class="main-right-item">
-                    <p class="main-right-item-time">10:00</p>
-                    <p class="main-right-item-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi, laborum?</p>
-                </div>
-                <div class="main-right-item">
-                    <p class="main-right-item-time">10:00</p>
-                    <p class="main-right-item-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi, laborum?</p>
+                <div class="main-right-content">
+                  loading ...
                 </div>
             </div>
         </div>
@@ -251,11 +248,10 @@
   
   </div>
   <!-- End of .container -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-    
-    <script  type="module" src="./api/article.js"></script>
-    <script  type="module" src="./src/index.js"></script>
-    
+
+  <script  type="module" src="./src/index.js"></script>
+  <!-- <script  type="module" src="./src/leftSection.js"></script> -->
 </body>
 </html>

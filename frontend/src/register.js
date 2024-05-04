@@ -1,3 +1,10 @@
+const userInfo = JSON.parse(localStorage.getItem("userInfo"))
+
+if(userInfo){
+    window.location.href = "./index.html";
+}
+
+
 const firstName = document.getElementById("firstName")
 const lastName = document.getElementById("lastName")
 const email = document.getElementById("email")
@@ -5,13 +12,15 @@ const password = document.getElementById("password")
 const role = document.getElementById("role")
 const submit = document.getElementById("submit")
 
+
+
 const Alert = document.getElementById("alert")
 
 const signup = async (e) => {
     e.preventDefault()
 
-    submit.textContent = "Loading ..."
-    submit.disabled = true
+    // submit.textContent = "Loading ..."
+    // submit.disabled = true
 
 
     if(role == ""){
@@ -59,11 +68,9 @@ const signup = async (e) => {
                 Alert.textContent = "email already exist!" ;
                 Alert.className = "alert alert-primary";
             }
-
-            submit.textContent = "Submit"
-            submit.disabled = false
-            return
         }
+        // submit.textContent = "Submit"
+        // submit.disabled = false
       })
       .catch(err => console.log("error : ",err))
 

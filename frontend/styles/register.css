@@ -1,0 +1,41 @@
+a {
+    text-decoration: none;
+}
+.login-page {
+    width: 100%;
+    height: 100vh;
+    display: inline-block;
+    display: flex;
+    align-items: center;
+}
+
+.form-left{
+    display: flex;
+    align-items: center;
+}
+.login-page form{
+    max-height: 70%;
+}
+
+
+.form-right i {
+    font-size: 100px;
+}
+
+.login-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.login-card{
+    /* border: 10px solid black; */
+    width: 80%;
+    margin: auto;
+}
+
+.register-select{
+    width: 100px !important;
+    margin-left: 12px;
+    padding: 2px 10px;
+}

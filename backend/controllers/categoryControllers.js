@@ -3,6 +3,7 @@ const Category = require("../models/categoryModels")
 const User = require('../models/userModels')
 
 // createCategory
+
 const createCategory = async (req,res)=>{
 try{
     const userId = req.body.id

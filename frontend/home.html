@@ -4,60 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JOURNAL DE LA FSR</title>
-    <link rel="stylesheet" href="home_page.css">
-    <link rel="stylesheet" href="Affiche_journal.css">
-    <script src="home.js" defer></script>
-    <script src="Affiche_journal.ts" defer></script>
-    <script>
-        // Sélectionnez le bouton par son ID
-const loginButton = document.getElementById('login-button');
-
-// Ajoutez un écouteur d'événement de clic au bouton
-loginButton.addEventListener('click', () => {
-    // Code à exécuter lorsque le bouton est cliqué
-   
-
-    // Par exemple, vous pourriez rediriger l'utilisateur vers une page de connexion
-    window.location.href = "/sign2_html.html";
-});
-    </script>
-   <script>
-    async function performSearch(event) {
-    event.preventDefault(); // Empêche le comportement par défaut du formulaire (rechargement de la page)
+    <link rel="stylesheet" href="./styles/home.css">
+    <script src="./src/home.js" defer></script>
     
-    const searchQuery = document.getElementById('search-input').value;
     
-    // Effectuer la recherche dans votre base de données (vous devez implémenter cette partie)
-    try {
-        const response = await fetch(`/search?query=${searchQuery}`); // Exemple d'URL d'API de recherche
-        const results = await response.json();
-        
-        // Traitez les résultats de la recherche (affichage des résultats, par exemple)
-        console.log('Résultats de la recherche:', results);
-        // Ajoutez votre logique pour afficher les résultats sur la page
-        
-    } catch (error) {
-        console.error('Erreur lors de la recherche:', error);
-    }
-}
-
-   </script> 
-   <script>
-    // Fonction pour afficher ou masquer la barre de recherche
-function toggleSearchBar() {
-    const searchBar = document.getElementById('search-bar');
-    
-    if (searchBar.style.display === 'none') {
-        searchBar.style.display = 'block'; // Affiche la barre de recherche
-    } else {
-        searchBar.style.display = 'none'; // Masque la barre de recherche
-    }
-}
-
-   </script>
-   
-  
-    </head>
 </head>
 <body>
     <!--THE MAIN DIV-->
@@ -74,7 +24,7 @@ function toggleSearchBar() {
             <button id="login-button">Se connecter</button>
         </div>
         <div class="login-container">
-            <a href="./abonnement.html" style="background-color: #f60000;" id="login-button" class="button">Abonnez-vous</a>
+            <a href="../frontend/abonnement.html" style="background-color: #f60000;" id="login-button" class="button">Abonnez-vous</a>
         </div>
     </div>
     <!--the TITLE DIV END -->
@@ -108,16 +58,17 @@ function toggleSearchBar() {
             <a href="#">Contact Us</a> 
             
         </nav>
-    </div>
+    </div><br>
         <!-- THE NAV BAR DIV END -->
 
 
 <!-- THE CENTER AND THE LEFT AND THE RIGHT MAIN DIV -->
-<div >
+     <div class="container">
 
-
-        <!--THE LEFT SIDE DIV-->
-        <div>
+        
+        <div >
+            <!--THE LEFT SIDE DIV-->
+        <div class="div-left">
         <ul class="articles-list">
             <li class="article ">
             <div>
@@ -140,9 +91,29 @@ function toggleSearchBar() {
             </a>
             </h3>
             </div>
+            
             </div>
             </li>
-             <!---->
+            
+                <li class="article ">
+                    <div>
+                    
+                    <div class="article-content">
+                    <div class="article-meta">
+                    <a class="article-category" href="#">Éducation</a>
+                    </div>
+                    <h3 class="article-heading">
+                    <a href="#">
+                    <span class="label label-premium">
+                    <img src="http://www.fsr.ac.ma/sites/default/files/Master-01.jpg" alt="" width="0" height="0">
+                    </span>
+                    MASTERCLASS EN "ÉDUCATION OUVERTE"&nbsp;&nbsp;
+                    </a>
+                    </h3>
+                    </div>
+                    
+                    </div>
+                    </li>
              <li class="article ">
                 <div>
                 
@@ -164,99 +135,80 @@ function toggleSearchBar() {
             </li>
             </ul>
         </div>
-        <!-- THE LEFT SIDE DIV END  -->
-
-
-            <!---THE CENTER SIDE DIV-->
-            <div class="row">
-                <div class="article-header">
-                    <a class="article-image" href="http://www.fsr.ac.ma/professor/bourse-erasmuska107">
-                    </a>
-                </div>
-                <div class="article-content">
-                    <div class="article-meta">
-                        <a class="article-category" href="#">Sport</a>
-                    </div>
-                    <h3 class="article-heading2">
-                        <a href="http://www.fsr.ac.ma/content/tournoi-de-basketball">
-                            <span class="label label-premium">
-                                <img class="article-image" src="http://www.fsr.ac.ma/sites/default/files/EPIC-ANNONCE-WEB.jpg" alt="" width="" height="500">                      
-                            </span>
-                            COLLABORATION DU COLLISIONNEUR ÉLECTRON-PROTON &nbsp;
-                        </a>
-                    </h3>
-                </div>
-            </div>
-            <!-- THE CENTER SIDE DIV END  -->
+        <!--THE LEFT SIDE DIV END-->
+        <!-- THE CENTER SIDE DIV  -->
+        <div class="div-center">
             
-            <!--THE RIGHT SIDE DIV-->
-            <div class="header-right">
-                <div class="widget-box" style="background: #a5de99; padding: 1%;">
-                <h2 class="widget-heading"><a href="/categorie/linstant-t">Club de Faculté</a></h2>
-                <div class="widget-content" style="display:inline-block;">
-                <ul class="articles-list">
-                <li class="article fix-marg" style="display: block;">
-                
-                <div class="article-content">
-                <h3 class="article-heading">
-                <time style="float: left;margin-left: 0;font-family: roboto;font-size: 11px;margin-right: 4px;line-height: 21px;" class="article-publish">16:17</time>
-                <a style="font-weight: 500; float: revert; width: auto; display: contents;" href="https://telquel.ma/instant-t/2024/04/23/espagne-imbroglio-judiciaire-autour-dun-baron-de-la-mocro-maffia-en-fuite_1867896/">Espagne : imbroglio judiciaire autour d'un baron de la “Mocro Maffia” en fuite</a>
-                </h3>
-                </div>
-                </li>
-                <li class="article fix-marg" style="display: block;">
-                <div class="article-meta">
-                
-                </div>
-                <div class="article-content">
-                <h3 class="article-heading">
-                <time style="float: left;margin-left: 0;font-family: roboto;font-size: 11px;margin-right: 4px;line-height: 21px;" class="article-publish">16:04</time>
-                <a style="font-weight: 500; float: revert; width: auto; display: contents;" href="https://telquel.ma/instant-t/2024/04/23/le-bataillon-israelien-ultra-orthodoxe-netzah-yehuda-un-passe-dexactions-et-dimpunite_1867885/">Le bataillon israélien ultra-orthodoxe Netzah Yehuda, un passé d’exactions et d’impunité</a>
-                </h3>
-                </div>
-                </li>
-                <li class="article fix-marg" style="display: block;">
-                <div class="article-meta">
-                
-                </div>
-                <div class="article-content">
-                <h3 class="article-heading">
-                <time style="float: left;margin-left: 0;font-family: roboto;font-size: 11px;margin-right: 4px;line-height: 21px;" class="article-publish">15:20</time>
-                <a style="font-weight: 500; float: revert; width: auto; display: contents;" href="https://telquel.ma/instant-t/2024/04/23/candidatures-de-mediane-et-mansouri-au-comite-executif-du-parti-de-listiqlal_1867864/">Candidatures de Mediane et Mansouri au comité exécutif du parti de l’Istiqlal</a>
-                </h3>
-                </div>
-                </li>
-                <li class="article fix-marg" style="display: block;">
-                <div class="article-meta">
-                
-                </div>
-                <div class="article-content">
-                <h3 class="article-heading">
-                <time style="float: left;margin-left: 0;font-family: roboto;font-size: 11px;margin-right: 4px;line-height: 21px;" class="article-publish">15:16</time>
-                <a style="font-weight: 500; float: revert; width: auto; display: contents;" href="https://telquel.ma/instant-t/2024/04/23/collectivites-locales-a-rabat-un-consortium-syndical-appelle-a-une-greve-de-trois-jours_1867860/">Collectivités locales : à Rabat, un consortium syndical appelle à une grève de trois jours</a>
-                </h3>
-                </div>
-                </li>
-                <li class="article fix-marg" style="display: block;">
-                <div class="article-meta">
-                
-                </div>
-                <div class="article-content">
-                <h3 class="article-heading">
-                <time style="float: left;margin-left: 0;font-family: roboto;font-size: 11px;margin-right: 4px;line-height: 21px;" class="article-publish">14:13</time>
-                <a style="font-weight: 500; float: revert; width: auto; display: contents;" href="https://telquel.ma/instant-t/2024/04/23/hopitaux-de-gaza-lonu-veut-une-enquete-internationale-sur-des-fosses-communes_1867851/">Hôpitaux de Gaza : l’ONU veut une enquête internationale sur des fosses communes</a>
-                </h3>
-                </div>
-                </li>
-                </ul>
-                <div class="bloc-tbn">
-                <a style="float:left;width:100%;text-align:center;float:left;" href="/categorie/linstant-t" class="bouton-plus">+ D'ARTICLES</a>
-                </div>
-                </div>
-                </div>
-                </div>
-                <!-- THE RIGHT SIDE DIV END  -->
+            <div >
+                <a class="article-image" href="http://www.fsr.ac.ma/professor/bourse-erasmuska107">
+                </a>
             </div>
+            <div>
+                <div class="article-meta">
+                    <a class="article-category" href="#">Sport</a>
+                </div>
+                <h3 class="article-heading2">
+                    <a href="http://www.fsr.ac.ma/content/tournoi-de-basketball">
+                        <span class="label label-premium">
+                            <img class="article-image" src="http://www.fsr.ac.ma/sites/default/files/EPIC-ANNONCE-WEB.jpg" alt="" width="" height="500">                      
+                        </span>
+                        COLLABORATION DU COLLISIONNEUR ÉLECTRON-PROTON &nbsp;
+                    </a>
+                </h3>
+            </div>
+        
+        </div>
+        <!-- THE CENTER SIDE DIV END  -->
+    
+        <!--THE RIGHT SIDE DIV-->
+        <div class="div-right">
+                
+                
+            <h2 class="widget-heading"><a href="/categorie/linstant-t">Club de Faculté</a></h2>
+            <div class="widget-content" style="display:inline-block;">
+            <ul class="articles-list">
+            <li class="article fix-marg" style="display: block;">
+            
+            <div class="article-content">
+            <h3 class="article-heading">
+            <time style="float: left;margin-left: 0;font-family: roboto;font-size: 11px;margin-right: 4px;line-height: 21px;" class="article-publish">16:17</time>
+            <a style="font-weight: 500; float: revert; width: auto; display: contents;" href="https://telquel.ma/instant-t/2024/04/23/espagne-imbroglio-judiciaire-autour-dun-baron-de-la-mocro-maffia-en-fuite_1867896/">Espagne : imbroglio judiciaire autour d'un baron de la “Mocro Maffia” en fuite</a>
+            </h3>
+            </div>
+            </li>
+            <li class="article fix-marg" style="display: block;">
+            <div class="article-meta">
+            
+            </div>
+            <div class="article-content">
+            <h3 class="article-heading">
+            <time style="float: left;margin-left: 0;font-family: roboto;font-size: 11px;margin-right: 4px;line-height: 21px;" class="article-publish">16:04</time>
+            <a style="font-weight: 500; float: revert; width: auto; display: contents;" href="https://telquel.ma/instant-t/2024/04/23/le-bataillon-israelien-ultra-orthodoxe-netzah-yehuda-un-passe-dexactions-et-dimpunite_1867885/">Le bataillon israélien ultra-orthodoxe Netzah Yehuda, un passé d’exactions et d’impunité</a>
+            </h3>
+            </div>
+            </li>
+            <li class="article fix-marg" style="display: block;">
+            <div class="article-meta">
+            
+            </div>
+            <div class="article-content">
+            <h3 class="article-heading">
+            <time style="float: left;margin-left: 0;font-family: roboto;font-size: 11px;margin-right: 4px;line-height: 21px;" class="article-publish">15:20</time>
+            <a style="font-weight: 500; float: revert; width: auto; display: contents;" href="https://telquel.ma/instant-t/2024/04/23/candidatures-de-mediane-et-mansouri-au-comite-executif-du-parti-de-listiqlal_1867864/">Candidatures de Mediane et Mansouri au comité exécutif du parti de l’Istiqlal</a>
+            </h3>
+            </div>
+            </li>
+            </ul>
+            <div class="bloc-tbn">
+            <a style="float:left;width:100%;text-align:center;float:left;" href="/categorie/linstant-t" class="bouton-plus">+ D'ARTICLES</a>
+            </div>
+            </div>
+            
+           
+            </div>
+            <!-- THE RIGHT SIDE DIV END  -->
+            </div>
+           </div> 
             <!-- THE CENTER AND THE LEFT AND THE RIGHT DIV END -->
 
                 <!--down-->

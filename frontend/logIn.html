@@ -15,6 +15,8 @@
 
     <div class="login-page bg-light">
         <div class="container">
+            <div  id="alert" class="alert alert-primary" role="alert">
+            </div>
             <h3 class="mb-3 text-center ">Sign In</h3>
             <div class="row">
                 <div class="col-lg-10 offset-lg-1">
@@ -26,8 +28,8 @@
                                             <div class="col-12">
                                                 <label>Email<span class="text-danger">*</span></label>
                                                 <div class="input-group">
-                                                    <div class="input-group-text"><i class="bi bi-person-fill"></i></div>
-                                                    <input type="text" class="form-control" placeholder="Enter Email">
+                                                    <div  class="input-group-text"><i class="bi bi-person-fill"></i></div>
+                                                    <input id="email" type="text" class="form-control" placeholder="Enter Email">
                                                 </div>
                                             </div>
 
@@ -35,7 +37,7 @@
                                                 <label>Password<span class="text-danger">*</span></label>
                                                 <div class="input-group">
                                                     <div class="input-group-text"><i class="bi bi-lock-fill"></i></div>
-                                                    <input type="password" class="form-control" placeholder="Enter Password">
+                                                    <input id="password" type="password" class="form-control" placeholder="Enter Password">
                                                 </div>
                                             </div>
 
@@ -44,7 +46,7 @@
                                             </div> -->
 
                                             <div class="col-12">
-                                                <button type="submit" class="btn btn-primary px-4 float-end mt-4">login</button>
+                                                <button id="submit" type="submit" class="btn btn-primary px-4 float-end mt-4">login</button>
                                             </div>
                                     </form>
                                 </div>
@@ -64,5 +66,6 @@
 
     <!-- Bootstrap JS -->
      
+    <script src="./src//logIn.js"></script>
 </body>
 </html>

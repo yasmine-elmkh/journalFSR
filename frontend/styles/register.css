@@ -39,3 +39,7 @@ a {
     margin-left: 12px;
     padding: 2px 10px;
 }
+
+#alert {
+    display: none;
+}

@@ -16,6 +16,10 @@
     <div class="login-page bg-light">
         <div class="container">
             <div class="row">
+                
+                <div  id="alert" class="alert alert-primary" role="alert">
+                  </div>
+
                 <h3 class="mb-3 text-center">Register</h3>
                 <div class="col-lg-10 offset-lg-1">
                     <div class="bg-white shadow rounded login-card">
@@ -27,7 +31,7 @@
                                                 <label>first Name<span class="text-danger">*</span></label>
                                                 <div class="input-group">
                                                     <div class="input-group-text"><i class="bi bi-person-fill"></i></div>
-                                                    <input type="text" class="form-control" placeholder="Enter first Name" required>
+                                                    <input id="firstName" type="text" class="form-control" placeholder="Enter first Name" required>
                                                 </div>
                                             </div>
 
@@ -35,7 +39,7 @@
                                                 <label>last Name<span class="text-danger">*</span></label>
                                                 <div class="input-group">
                                                     <div class="input-group-text"><i class="bi bi-person-fill"></i></div>
-                                                    <input type="text" class="form-control" placeholder="Enter last Name" required>
+                                                    <input id="lastName" type="text" class="form-control" placeholder="Enter last Name" required>
                                                 </div>
                                             </div>
 
@@ -43,7 +47,7 @@
                                                 <label>Email<span class="text-danger">*</span></label>
                                                 <div class="input-group">
                                                     <div class="input-group-text"><i class="bi bi-person-fill"></i></div>
-                                                    <input type="text" class="form-control" placeholder="Enter Email" required>
+                                                    <input id="email" type="text" class="form-control" placeholder="Enter Email" required>
                                                 </div>
                                             </div>
 
@@ -51,24 +55,30 @@
                                                 <label>Password<span class="text-danger">*</span></label>
                                                 <div class="input-group">
                                                     <div class="input-group-text"><i class="bi bi-lock-fill"></i></div>
-                                                    <input type="password" class="form-control" placeholder="Enter Password" required>
+                                                    <input id="password" type="password" class="form-control" placeholder="Enter Password" required>
                                                 </div>
                                             </div>
 
                                             <div class="col-12">
                                                 <label class="">choose your Role :<span class="text-danger">*</span></label>
 
-                                                <div class="d-flex">
+                                                <!-- <div class="d-flex">
                                                     <div class="input-group">
-                                                        <input type="checkbox" class="" placeholder="">
+                                                        <input id="role-visiteur" type="checkbox" class="" placeholder="">
                                                         <label class="mx-2" >Visiteur<span class="mx-2"></span></label>
                                                     </div>
     
                                                     <div class="input-group">
-                                                        <input type="checkbox" class="" placeholder="">
+                                                        <input id="role-journalist" type="checkbox" class="" placeholder="">
                                                         <label class="mx-2" >Journalist<span class="mx-2"></span></label>
                                                     </div>
-                                                </div>
+                                                </div> -->
+
+                                                <select name="" id="role">
+                                                    <option value="">Role</option>
+                                                    <option value="Visiteur">Visiteur</option>
+                                                    <option value="Journalist">Journalist</option>
+                                                </select>
                                             </div>
 
                                             <!-- <div class="col-sm-6">
@@ -76,7 +86,7 @@
                                             </div> -->
 
                                             <div class="col-12">
-                                                <button type="submit" class="btn btn-primary px-4 float-end mt-4">register</button>
+                                                <button id="submit" type="submit" class="btn btn-primary px-4 float-end mt-4">register</button>
                                             </div>
                                     </form>
                                 </div>
@@ -96,5 +106,6 @@
 
     <!-- Bootstrap JS -->
      
+    <script src="./src/register.js"></script>
 </body>
 </html>

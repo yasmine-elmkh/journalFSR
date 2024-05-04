@@ -2,7 +2,12 @@ const mongoose = require('mongoose') ;
 const {ObjectId} = mongoose.Schema ;
 
 const UserSchema = new mongoose.Schema({
-    name : {
+    firstName : {
+        type : String ,
+        trim : true ,
+        required : true ,
+    },
+    lastName : {
         type : String ,
         trim : true ,
         required : true ,
@@ -20,7 +25,7 @@ const UserSchema = new mongoose.Schema({
     role: {
         type: String,
         require: true,
-        enum: ["admin", "journalist", "visiteur", ""]
+        enum: ["admin", "Journalist", "Visiteur", ""]
     }
 } , {
     timestamps : true 

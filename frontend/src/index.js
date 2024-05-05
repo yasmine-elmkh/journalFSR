@@ -1,27 +1,12 @@
-import {getAcrticles, 
-        getLastAcrticle } from "../api/article.js";
+import { getAcrticles, 
+         getLastAcrticle } from "../api/article.js";
 import { getCategories } from "../api/category.js";
 import { dateFormat } from "../utils/dateFormate.js";
-import { isAuth } from "../utils/isAuth.js";
-import { logout } from "../utils/logout.js";
 
 const rightContent = document.getElementsByClassName("main-right-content")[0]
-const navToggle = document.getElementById("user-nav-toggle")
-const authBtns = document.getElementById("auth-btns")
-const logoutBtn = document.getElementById("logout-btn")
 const categorySection = document.getElementById("category-list")
 const leftContent = document.getElementsByClassName("last-post-by-category")[0]
 const midContent = document.getElementsByClassName("main-mid-section")[0]
-
-
-if(isAuth()){
-    navToggle.classList.add("displayBlock")
-    authBtns.classList.add("diplayNone")
-    logoutBtn.addEventListener("click", logout)
-}else{
-    navToggle.classList.add("diplayNone")
-    authBtns.classList.add("displayBlock")
-}
 
 
 try{
@@ -29,22 +14,22 @@ try{
     let articles = await getAcrticles()
     let categories =  await getCategories()
     let lastArticles = await getLastAcrticle()
-    let lastArticle = lastArticles[0]
+    let lastArticle = lastArticles[0] ;
 
 
-    // show data in main right section
+    // show data in main right section 
     rightContent.innerHTML = articles.map(item => `
-        <div class="main-right-item">
-            <p class="main-right-item-time">${dateFormat(item.createdAt)}</p>
+        <a class="main-right-item" href="./articleById.html?id=${item._id}" style="color:black;  text-decoration: none !important; cursor:pointer;">
+            <p class="main-right-item-time">${dateFormat(item.createdAt).time}</p>
             <p class="main-right-item-description">${item.description.length > 100 ? item.description.slice(0,100) + "..." : item.description}</p>
-        </div>`
+        </a>`
     )
     .join("")
 
     // show categories in category section
     categorySection.innerHTML = categories.map(item =>`
         <li class="category-list-item">
-            <a style="color:black; text-decoration:none" href="./articles-by-category/${item._id}">${item.title}</a>
+            <a style="color:black;  text-decoration: none !important; cursor:pointer;" href="./articles.html?c=${item.title}&id=${item._id}">${item.title}</a>
         </li>
         `
     )
@@ -52,11 +37,11 @@ try{
 
     // show data in letf section
     leftContent.innerHTML = lastArticles.map(item => `
-    <div class="last-post-by-category-item">
+    <a href="./articleById.html?id=${item._id}" style="color:black;  text-decoration: none !important; cursor:pointer;" class="last-post-by-category-item">
         <img class="last-post-image-by-category" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYzecrS2hzwe5iqglv-Z7UpnaSwuqshPVCEQ&usqp=CAU" alt="">
         <span class="category-name">${item.category.title}</span>
         <p class="last-post-title-by-category">${item.description.length > 100 ? item.description.slice(0,100) + "..." : item.description}</p>
-    </div>`
+    </a>`
     )
     .join("")
 

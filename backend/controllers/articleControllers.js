@@ -46,16 +46,43 @@ const getArticleById = async (req,res)=>{
         }
 
       const findArticleById = await Article.findById(articleId)
-                                            .populate("owner","_id name")
+                                            .populate("owner","_id firstName lastName")
+                                            .populate("category","_id title")
                                                
-      
         if(!findArticleById){
-
             return res.status(403).json({
                 message: "article not found!!"
             })
         }
         return res.status(200).json(findArticleById)
+    }catch(Error){  
+        console.log(Error)
+        return res.status(404).json({
+            message: "Server Error"
+        })
+    }
+}
+
+const articleByCategoryId = async (req,res)=>{
+    try{
+        const categoryId = req.params.categoryId
+        
+        if(!isValidObjectId(categoryId)){
+            return res.status(403).json({
+                message: "Id not valid!"
+            })
+        }
+
+      const articles = await Article.find({category: categoryId})
+                                               
+      
+        if(!articles){
+
+            return res.status(403).json({
+                message: "article not found!!"
+            })
+        }
+        return res.status(200).json(articles)
     }catch(Error){  
         console.log(Error)
         return res.status(404).json({
@@ -191,5 +218,6 @@ module.exports = {
     lastArticles,
     deleteArticaleById,
     showAllArticles,
-    updateArticle
+    updateArticle,
+    articleByCategoryId
 }

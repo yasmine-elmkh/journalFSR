@@ -1,11 +1,11 @@
 import { isAuth } from "../utils/isAuth.js";
+import { login } from "../api/auth.js";
 
 if(isAuth()){
     window.location.href = "./index.html";
 }
 
 if(!isAuth()){
-
     const email = document.getElementById("email")
     const password = document.getElementById("password")
     const submit = document.getElementById("submit")
@@ -13,64 +13,22 @@ if(!isAuth()){
     
     const signIn = async (e) => {
         e.preventDefault();
-    
-        submit.textContent = "Loading ...";
-        submit.disabled = true;
-    
-        const userData = {
-            email: email.value,
-            password: password.value
-        };
-    
         try {
-            const response = await fetch("http://localhost:4000/api/auth/signin", {
-                method: "POST",
-                mode: "cors",
-                cache: "no-cache",
-                credentials: "same-origin",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                redirect: "follow",
-                referrerPolicy: "no-referrer",
-                body: JSON.stringify(userData),
-            });
-    
-            if (response.ok) {
-                Alert.style.display = "block";
-                Alert.textContent = "Log in successful";
-                Alert.className = "alert alert-success";
-    
-                const data = await response.json();
-    
-                // setTimeout(() => {
-                //     window.location.href = "./index.html";
-                // }, 1000)
-    
+            submit.textContent = "Loading ...";
+            submit.disabled = true;
+        
+            const response = await login(email.value, password.value)
+
+            Alert.style.display = "block";
+            Alert.textContent = response?.status !== 200 ? `${response.data.message}` : "Succeed logIn";
+            Alert.className = response?.status !== 200 ? "alert alert-danger" : "alert alert-success";
+
+            if (response.status == 200 ) {
+                localStorage.setItem("userInfo", JSON.stringify(response.data));
+
                 window.location.href = "./index.html";
-                 // Assuming the token is sent in the response body as responseData.token
-            if (data.token) {
-                // Set the token as a cookie
-                document.cookie = `token=${data.token}; path=/;`;
-                console.log("Token set as cookie:", data.token);
             }
-    
-                localStorage.setItem("userInfo", JSON.stringify(data))
-                document.cookie = "userInfo" + "=" + data + ";" + ""  + ";path=/";
-    
-                // Do something with the data if needed
-            } else {
-                if (response.status === 403) {
-                    Alert.style.display = "block";
-                    Alert.textContent = "All fields are required";
-                    Alert.className = "alert alert-danger";
-                } else if (response.status === 400) {
-                    Alert.style.display = "block";
-                    Alert.textContent = "Email or Password incorrect";
-                    Alert.className = "alert alert-danger";
-                }
-    
-            }
+            
             submit.textContent = "Submit";
             submit.disabled = false;
         } catch (error) {
@@ -79,7 +37,6 @@ if(!isAuth()){
             submit.disabled = false;
         }
     };
-    
     
     submit.addEventListener("click", signIn)
 }

@@ -1,6 +1,8 @@
 const express = require('express') // packages express
 const mongoose = require('mongoose') // base de donnees mongo
 const bodyParser = require('body-parser');
+const cors = require("cors")
+const cookieParser = require('cookie-parser');
 
 const app = express() 
 
@@ -12,7 +14,8 @@ mongoose.connect("mongodb+srv://yasminrelmkhantar:YbjL1cpmrKQ0Nowy@cluster0.d9qu
 
 // middlewares
 app.use(bodyParser.json())
-
+app.use(cors())
+app.use(cookieParser())
 
 // routes
 const authRoutes = require('./routes/authRoutes')

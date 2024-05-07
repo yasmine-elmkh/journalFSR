@@ -3,6 +3,7 @@ const Category = require("../models/categoryModels")
 const User = require('../models/userModels')
 
 // createCategory
+
 const createCategory = async (req,res)=>{
 try{
     const userId = req.body.id
@@ -127,21 +128,6 @@ const updateCategory = async (req, res) => {
 //showAllCategory
 const getAllCategory = async (req,res) => {
     try{
-       
-        const userId = req.body.userId
-        if(!isValidObjectId(userId)){
-            return res.status(400).json({
-                message:"user id not valid!"
-            })
-         }
-        // Assume User is imported and is an admin
-         const admin = await User.findById(userId);
-    
-            if (!admin || admin.role !== "admin") {
-                return res.status(401).json({
-                    message: "You must be the admin!"
-                });
-            }
         const allCategory = await Category.find()
         if(!allCategory){
            return res.status(403).json({

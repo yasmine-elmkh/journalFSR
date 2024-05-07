@@ -31,7 +31,6 @@ loginButton.addEventListener('click', () => {
     }
 }
 
-   
     // Fonction pour afficher ou masquer la barre de recherche
 function toggleSearchBar() {
     const searchBar = document.getElementById('search-bar');

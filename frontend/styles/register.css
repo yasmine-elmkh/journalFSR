@@ -1,6 +1,12 @@
 a {
     text-decoration: none;
 }
+.site-icon {
+    width: 110px; /* Adjust the width as needed */
+    height: 110px; /* Adjust the height as needed */
+   margin-right: 10px;
+   margin-left: 10px /* Adjust the spacing between the icon and title */
+}
 .login-page {
     width: 100%;
     height: 100vh;

@@ -21,11 +21,18 @@
 }
 
 .navbar .navbar-brand {
-    font-size: 30px;
+    font-size: 35px;
     font-weight: 800;
+    color: #00408b;
+    font-family: Oswald;
 }
  
-
+.site-icon {
+    width: 110px; /* Adjust the width as needed */
+    height: 110px; /* Adjust the height as needed */
+   margin-right: 10px;
+   margin-left: 10px /* Adjust the spacing between the icon and title */
+}
 .navbar-collapse .d-flex a {
     text-decoration:  none !important;
 }
@@ -42,6 +49,7 @@
     justify-content: space-between;
     flex-wrap: wrap;
     padding: 0;
+    
 }
 
 .category .category-list .category-list-item{
@@ -49,6 +57,7 @@
     cursor: pointer;
     font-weight: 600;
     margin: 0;
+   
 }
 
 .category .category-list .category-list-item:hover{
@@ -84,7 +93,7 @@
 
 .main .main-content .main-right-section{
     flex: 0.2;
-    background-color: #FFEAE3;
+    background-color: #f0f0f0 ;
     border-radius: 4px;
     border: 1px solid rgba(211, 211, 211, 0.183);
     padding: 8px;

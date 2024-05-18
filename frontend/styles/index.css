@@ -89,6 +89,7 @@
 .main .main-content .main-mid-section{
     flex: 0.6;
     padding: 8px;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .main .main-content .main-right-section{

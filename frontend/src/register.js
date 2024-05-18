@@ -58,7 +58,7 @@ const signup = async (e) => {
             }
     
     
-            submit.textContent = "Submit"
+            submit.textContent = "Registre"
             submit.disabled = false
     }catch(err){
         console.log("register err : ", err)

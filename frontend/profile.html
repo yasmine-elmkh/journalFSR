@@ -38,12 +38,19 @@
         .dropdown-toggle::after {
             display: none;
         }
+        .site-icon {
+    width: 110px; /* Adjust the width as needed */
+    height: 110px; /* Adjust the height as needed */
+   margin-right: 10px;
+   margin-left: 10px /* Adjust the spacing between the icon and title */
+}
     </style>
 </head>
 <body>
 
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <img class="site-icon" src="./fsr_logo-removebg-preview.png">
         <div class="container">
         <a class="navbar-brand" href="./">Journal FSR</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -69,16 +76,16 @@
                 </button>
                 <div style="margin-left: -110px;" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <a style="font-size: 13px;" class="dropdown-item" href="#">Profile</a>
-                    <a style="font-size: 13px;" class="dropdown-item" href="#">abounez-vous</a>
-                    <a id="logout-btn" style="font-size: 13px;" class="dropdown-item">logOut</a>
+                    <a style="font-size: 13px;" class="dropdown-item" href="#">abonnez-vous</a>
+                    <a id="logout-btn" style="font-size: 13px;" class="dropdown-item">Deconnecter</a>
                 </div>
             </div>
 
 
             <div id="auth-btns">
                 <form class="d-flex">
-                    <a type="button" href="./login.html" style="color: black;" class="nav-btn">signIn</a>
-                    <a type="button" href="./register.html" class="btn nav-btn btn-dark mx-1">register</a>
+                    <a type="button" href="./login.html" style="color: black; font-family: Montserrat;" class="nav-btn">Connectez-vous</a>
+                    <a type="button" href="./register.html" class="btn nav-btn mx-1" style="background-color: #fe9a2e; font-family: Montserrat;">S'inscrire</a>
                 </form>
             </div>
 
@@ -93,26 +100,26 @@
             <div class="text-">
                 <img src="data:image/png;base64,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" alt="Person Icon" 
                     style="width: 150px; height: 130px;">
-                <h4>User Information</h4>
-                <p><strong>First Name:</strong> <span class="_firstName"></span></p>
-                <p><strong>Last Name:</strong> <span class="_lastName"></span></p>
-                <p><strong>Email:</strong> <span class="_email"></span></p>
+                <h4>Information Utilisateur :</h4>
+                <p><strong>Prénom :</strong> <span class="_firstName"></span></p>
+                <p><strong>Nom :</strong> <span class="_lastName"></span></p>
+                <p><strong>E-mail :</strong> <span class="_email"></span></p>
                 <p><strong>Role:</strong> <span class="_role"></span></p>
             </div>
         </div>
         <div class="col-md-9 profile-form">
-            <h4 class="text-center">Edit Profile</h4>
+            <h4 class="text-center">Editer le profile</h4>
             <form style="width: 100%;">
                 <div class="form-group">
-                    <label for="firstName">First Name</label>
+                    <label for="firstName">Prénom :</label>
                     <input type="text" class="form-control firstName" id="firstNameForm" name="firstName" placeholder="Enter First Name">
                 </div>
                 <div class="form-group">
-                    <label for="lastName">Last Name</label>
+                    <label for="lastName">Nom :</label>
                     <input type="text" class="form-control lastName" id="lastNameForm" name="lastName" placeholder="Enter Last Name">
                 </div>
                 <div class="form-group">
-                    <label for="password">Password</label>
+                    <label for="password">Mot de pass :</label>
                     <input type="password" class="form-control password" id="passwordForm" name="password" placeholder="Enter Password">
                 </div>
                 <div class="form-group">
@@ -122,7 +129,7 @@
                         <option value="Visiteur">Visiteur</option>
                     </select>
                 </div> -->
-                <button type="submit" class="btn btn-primary submitBtn">Submit</button>
+                <button type="submit" class="btn btn-primary submitBtn">Envoyer</button>
             </form>
         </div>
     </div>

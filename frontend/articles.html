@@ -28,11 +28,18 @@
             height: auto;
             border-radius: 4px;
         }
+        .site-icon {
+    width: 110px; /* Adjust the width as needed */
+    height: 110px; /* Adjust the height as needed */
+   margin-right: 10px;
+   margin-left: 10px /* Adjust the spacing between the icon and title */
+}
     </style>
 </head>
 <body>
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <img class="site-icon" src="./fsr_logo-removebg-preview.png">
         <div class="container">
         <a class="navbar-brand" href="./">Journal FSR</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -62,8 +69,8 @@
 
             <div id="auth-btns">
                 <form class="d-flex">
-                    <a type="button" href="./login.html" style="color: black;" class="nav-btn">signIn</a>
-                    <a type="button" href="./register.html" class="btn nav-btn btn-dark mx-1">register</a>
+                    <a type="button" href="./login.html" style="color: black; font-family: Montserrat;" class="nav-btn">Connecter-vous</a>
+                    <a type="button" href="./register.html" class="btn nav-btn mx-1" style="background-color: #fe9a2e; font-family: Montserrat;">S'inscrire</a>
                 </form>
             </div>
 
@@ -84,8 +91,8 @@
         
         <!-- Right Section -->
         <div class="col-md-3">
-            <h2 style="border-bottom: 2px solid black;" class="pb-2 mb-2">Instant T</h2>
-            <div  class="p-2 article-right" style=" height: 600px; overflow-y: scroll; background-color: #feeae3; border-radius: 5px;">
+            <h2 style="border-bottom: 2px solid black; " class="pb-2 mb-2">Flash infos </h2>
+            <div  class="p-2 article-right" style=" height: 600px; overflow-y: scroll; background-color: lightgray; border-radius: 5px;">
                <p class="text-center">Loading ...</p> 
                 <!-- Add more cards without images here -->
             </div>

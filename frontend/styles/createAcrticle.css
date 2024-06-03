@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&display=swap');
+
+h1{
+margin-top: 30px;
+font-weight: 700;
+font-size: 45px;
+font-family: 'Roboto', sans-serif;
+}
+
+.header{
+margin-bottom: 20px;
+}
+#description{
+font-size: 24px;
+}
+
+#survey-form {
+    border-radius: 4px;
+    border: 1px solid rgb(224, 224, 224) ;
+    padding: 20px;
+    width: 80%;
+    background-color: #f0f0f067;
+}
+
+.form-group{
+margin-bottom: 25px;
+/* border-radius: 4px;
+border: 1px solid lightblue ;
+padding: 20px; */
+}
+.form-group > label{
+display: block;
+font-size: 18px;	
+color: #000;
+}
+.custom-control-label{
+color: #000;
+font-size: 16px;
+}
+.form-control{
+height: 50px;
+background: #ecf0f4;
+border-color: transparent;
+padding: 0 15px;
+font-size: 16px;
+-webkit-transition: all 0.3s ease-in-out;
+-moz-transition: all 0.3s ease-in-out;
+-o-transition: all 0.3s ease-in-out;
+transition: all 0.3s ease-in-out;
+}
+.form-control:focus{
+border-color: #212529;
+-webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
+-moz-box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
+box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
+}
+textarea.form-control{
+height: 160px;
+padding-top: 15px;
+resize: none;
+}
+
+.btn{
+padding: .657rem .75rem;
+font-size: 18px;
+letter-spacing: 0.050em;
+-webkit-transition: all 0.3s ease-in-out;
+-moz-transition: all 0.3s ease-in-out;
+-o-transition: all 0.3s ease-in-out;
+transition: all 0.3s ease-in-out;
+}
+
+.btn-primary {
+color: #fff;
+background-color: #212529;
+border-color: #212529;
+}
+
+.btn-primary:hover {
+color: #212529;
+background-color: #ffffff;
+border-color: #212529;
+-webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
+-moz-box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
+box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
+}
+
+.btn-primary:focus, .btn-primary.focus {
+color: #212529;
+background-color: #ffffff;
+border-color: #212529;
+-webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
+-moz-box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
+box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
+}
+
+.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
+.show > .btn-primary.dropdown-toggle {
+color: #212529;
+background-color: #ffffff;
+border-color: #212529;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus,
+.show > .btn-primary.dropdown-toggle:focus {
+-webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
+-moz-box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
+box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
+}

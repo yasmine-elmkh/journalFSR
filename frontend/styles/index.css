@@ -62,15 +62,11 @@
     cursor: pointer;
     font-weight: 600;
     margin: 0;
-<<<<<<< Updated upstream
-   
-=======
     font-size: 14px;
     color:#034557 !important;
 }
 .category .category-list .category-list-item a{
     color:#0c6983 !important;
->>>>>>> Stashed changes
 }
 
 .category .category-list .category-list-item:hover{
@@ -108,11 +104,7 @@
 
 .main .main-content .main-right-section{
     flex: 0.2;
-<<<<<<< Updated upstream
-    background-color: #f0f0f0 ;
-=======
     background-color: #e3eeff;
->>>>>>> Stashed changes
     border-radius: 4px;
     border: 1px solid rgba(211, 211, 211, 0.183);
     padding: 8px;

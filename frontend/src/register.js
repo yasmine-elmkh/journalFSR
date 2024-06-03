@@ -13,6 +13,10 @@ const role = document.getElementById("role")
 const submit = document.getElementById("submit")
 const Alert = document.getElementById("alert")
 
+submit.addEventListener("click", function(event) {
+    event.preventDefault(); 
+
+
 const userData = {
     firstName: firstName.value,
     lastName: lastName.value,
@@ -21,7 +25,7 @@ const userData = {
     role: role.value
 }
 
-
+// console.log(userData)
 
 const signup = async (e) => {
     e.preventDefault()
@@ -37,7 +41,8 @@ const signup = async (e) => {
         }
     
          const res = await register(userData)
-    
+            // console.log(userData)
+
             if(res.ok){            
                 Alert.style.display = "block" ;
                 Alert.textContent = "registration succeed" ;
@@ -66,3 +71,4 @@ const signup = async (e) => {
 }
 
 submit.addEventListener("click", signup)
+})

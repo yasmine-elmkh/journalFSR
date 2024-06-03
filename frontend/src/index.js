@@ -13,9 +13,11 @@ try{
 
     let articles = await getAcrticles()
     let categories =  await getCategories()
-    let lastArticles = await getLastAcrticle()
-    let lastArticle = lastArticles[0] ;
+    let {lastArticleArr} = await getLastAcrticle()
+    let { lastPost} = await getLastAcrticle()
 
+    
+    console.log(lastPost)
 
     // show data in main right section 
     rightContent.innerHTML = articles.map(item => `
@@ -36,11 +38,13 @@ try{
     .join("")
 
     // show data in letf section
-    leftContent.innerHTML = lastArticles.map(item => `
+    leftContent.innerHTML = lastArticleArr.map(item => `
     <a href="./articleById.html?id=${item._id}" style="color:black;  text-decoration: none !important; cursor:pointer;" class="last-post-by-category-item">
-        <img class="last-post-image-by-category" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYzecrS2hzwe5iqglv-Z7UpnaSwuqshPVCEQ&usqp=CAU" alt="">
+        <img class="last-post-image-by-category" src="${item?.image ? item?.image : "https://img.freepik.com/vecteurs-premium/vecteur-icone-image-par-defaut-page-image-manquante-pour-conception-site-web-application-mobile-aucune-photo-disponible_87543-11093.jpg"}" alt="">
         <span class="category-name">${item.category.title}</span>
-        <p class="last-post-title-by-category">${item.description.length > 100 ? item.description.slice(0,100) + "..." : item.description}</p>
+        <div class="last-post-title-by-category">
+            ${item.description.length > 100 ? item.description.slice(0,100) + "..." : item.description}
+        </div>
     </a>`
     )
     .join("")
@@ -48,9 +52,12 @@ try{
     // show data in main mid section 
     midContent.innerHTML = `
         <div class="main-mid-section-content">
-            <img class="main-mid-item main-mid-img" src="https://ca-times.brightspotcdn.com/dims4/default/d1f506d/2147483647/strip/true/crop/5807x3871+1+0/resize/840x560!/format/webp/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F42%2Fe3%2F5731c20848a69999c9dea1b06bed%2F939111-me-usc-posthumous-degrees-gxc-0482.jpg" alt="">
-            <h3 class="main-mid-item main-mid-title">${lastArticle.category.title}</h3>
-            <p class="main-mid-item main-mid-description"> ${lastArticle.description}</p>
+            <img class="main-mid-item main-mid-img" src="${ lastPost?.image ? lastPost?.image : "https://img.freepik.com/vecteurs-premium/vecteur-icone-image-par-defaut-page-image-manquante-pour-conception-site-web-application-mobile-aucune-photo-disponible_87543-11093.jpg"}" alt="">
+            <h6 style="color:#3caac8; font-size : 20px ;text-align : left;" class="main-mid-item main-mid-title primary">${lastPost.category.title} : </h6>
+            <h1 style="color:#0e6883; font-size : 75px"  class="main-mid-item main-mid-title text-center">${lastPost.title}</h1>
+            <div class="main-mid-item main-mid-description px-4 text-start"> 
+                    ${lastPost.description}
+            </div>
         </div>`
 }catch(err){
     console.log("index eror : ", err)

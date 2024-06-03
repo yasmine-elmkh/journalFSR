@@ -13,7 +13,8 @@ mongoose.connect("mongodb+srv://yasminrelmkhantar:YbjL1cpmrKQ0Nowy@cluster0.d9qu
 .catch((err) => console.log("db is not connected ... !", err))
 
 // middlewares
-app.use(bodyParser.json())
+// app.use(bodyParser.json())
+app.use(bodyParser.json({ limit: '50mb' }));
 app.use(cors())
 app.use(cookieParser())
 

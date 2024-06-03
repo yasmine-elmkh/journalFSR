@@ -3,19 +3,30 @@ const Article = require("../models/articleModels");
 //postArticle
 const postArticle = async (req,res)=>{
     try{
-        const {title, description, owner , category} = req.body
+        const {title, 
+                description, 
+                owner , 
+                category, 
+                image} = req.body
 
-        if(!title || !description || !owner || !category){
+        if(!isValidObjectId(category)) {
+            return res.status(400).json({
+                message: "Invalid Id"
+            })
+        }
+
+        if(!title || !description || !owner){
             return res.status(401).json({
                 message: "all fields are required!"
             })
         }
         
         const article = new Article({
-         title,
-         description,
-         owner,
-         category
+            title,
+            description,
+            owner,
+            category,
+            image
         })
 
         if(!article) return res.status(401).json({
@@ -128,7 +139,7 @@ const showAllArticles = async (req,res)=>{
     try{
         const allArticles = await Article.find()
                                         .sort({ createdAt: -1 })
-                                        .limit(5);
+                                        .limit(7);
         console.log(allArticles); 
 
     if(!allArticles || allArticles.length < 1){
@@ -177,20 +188,31 @@ const updateArticle = async (req, res) => {
 const lastArticles = async (req, res) => {
     try{
 
-        const a = await Article.find({category: "66284fe6df12cca6456100d2"})
-                                .sort({ createdAt: -1 })
-                                .limit(1)
-                                .populate("category","_id title")
+        const lastPost = await Article.find()
+                                    .sort({ createdAt: -1 })
+                                    .limit(1)
+                                    .populate("category","_id title description")
 
-        const b = await Article.find({category: "6628525a04532782b7b26d52"})
+        const a = await Article.find({category: "665648cc20d44203fc9f6a19"}) // Editorial
                                 .sort({ createdAt: -1 })
                                 .limit(1)
-                                .populate("category","_id title")
+                                .populate("category","_id title description")
 
-        const c = await Article.find({category: "663140a9610d2403890eada4"})
+        const b = await Article.find({category: "6656490f20d44203fc9f6a25"}) //Culture et loisirs
+
                                 .sort({ createdAt: -1 })
                                 .limit(1)
-                                .populate("category","_id title")
+                                .populate("category","_id title description")
+
+        const c = await Article.find({category: "6656493220d44203fc9f6a2e"}) //Carrières et développement personnel
+                                .sort({ createdAt: -1 })
+                                .limit(1)
+                                .populate("category","_id title description")
+
+        const d = await Article.find({category: "6656490420d44203fc9f6a22"}) //Tech talks
+                                .sort({ createdAt: -1 })
+                                .limit(1)
+                                .populate("category","_id title description")
 
         let lastArticleArr = []
         if(a || a.length > 0){
@@ -204,14 +226,39 @@ const lastArticles = async (req, res) => {
         if(c || c.length > 0){
             lastArticleArr = [...lastArticleArr, ...c]
         }
+
+        if(d || d.length > 0){
+            lastArticleArr = [...lastArticleArr, ...d]
+        }
         
         console.log(lastArticleArr)
 
-        res.status(200).json(lastArticleArr)
+        res.status(200).json({lastArticleArr, lastPost: lastPost[0]})
     }catch(err){
 
     }
 }
+   const getArticleByUserId = async (req,res)=>{
+    try{
+      const userId = req.params.userId
+      if(!isValidObjectId(userId)){
+        return res.status(400).json({
+            message: "id error!"
+        })
+      }
+
+      const articles = await Article.find({owner: userId})
+                                        .select("_id description title createdAt")
+   
+    res.status(200).json(articles)
+    }catch(Error){  
+        console.log(Error)
+        return res.status(404).json({
+            message: "Server Error"
+        })
+    }
+}
+
 module.exports = {
     getArticleById,
     postArticle,
@@ -219,5 +266,6 @@ module.exports = {
     deleteArticaleById,
     showAllArticles,
     updateArticle,
-    articleByCategoryId
+    articleByCategoryId,
+    getArticleByUserId
 }

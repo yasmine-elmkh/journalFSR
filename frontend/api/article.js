@@ -1,4 +1,31 @@
 
+export const  createArticles = async (articleData) => {
+    try{
+console.log(articleData)
+        const res = await fetch("http://localhost:4000/api/article/create", {
+            method: "POST",
+            mode: "cors",
+            cache: "no-cache",
+            credentials: "same-origin",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            redirect: "follow",
+            referrerPolicy: "no-referrer",
+            body: JSON.stringify(articleData),
+        })
+
+        if(res.ok){
+        }
+        console.log(res)
+        const data = await res.json();
+        return {data, status: res.status} ;
+    }catch(err){
+        console.log(err)
+    }
+}
+
+
 export const getAcrticles = async () => {
     try{
 
@@ -43,6 +70,7 @@ export const getLastAcrticle = async () => {
         }
 
         const data = await res.json();
+        console.log(data)
         return data ;
     }catch(err){
         console.log(err)
@@ -93,6 +121,59 @@ export const acrticlesById = async (articleId) => {
         }
 
         const data = await res.json();
+        return data ;
+    }catch(err){
+        console.log(err)
+    }
+}
+
+export const getArticleByUserId = async (userId) => {
+    try{
+
+        const res = await fetch(`http://localhost:4000/api/article/myArticles/${userId}`, {
+            method: "GET",
+            mode: "cors",
+            cache: "no-cache",
+            credentials: "same-origin",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            redirect: "follow",
+            referrerPolicy: "no-referrer",
+        })
+
+        if(res.ok){
+        }
+
+        
+        const data = await res.json();
+        console.log(data)
+        return data ;
+    }catch(err){
+        console.log(err)
+    }
+}
+export const deleteArticaleById = async (userId) => {
+    try{
+
+        const res = await fetch(`http://localhost:4000/api/article/delete/${articleId}`, {
+            method: "DELETE",
+            mode: "cors",
+            cache: "no-cache",
+            credentials: "same-origin",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            redirect: "follow",
+            referrerPolicy: "no-referrer",
+        })
+
+        if(res.ok){
+        }
+
+        
+        const data = await res.json();
+        console.log(data)
         return data ;
     }catch(err){
         console.log(err)

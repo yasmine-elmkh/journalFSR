@@ -18,11 +18,12 @@ try{
 
 
     rightContent.innerHTML = articles.map(item => `
-                <div class="card" style="background-color: #feeae3;">
+                <div class="card" style="background-color: #e3eefd;">
                     <div class="card-body">
-                        <h5 class="card-title">${item.title}</h5>
-                        <p class="card-text"><small class="text-muted">${dateFormat(item.createdAt).time} ${dateFormat(item.createdAt).date}</small></p>
-                        <p class="card-text">${item.description.length > 100 ? item.description.slice(0,100) + "..." : item.description}</p>
+                        <h6 class="card-title">${item?.title.length > 20 ? item.title.slice(0,20) + "..." : item.title}</h6>
+                        <p class="card-text">${item.description.length > 50 ? item.description.slice(0,50) + "..." : item.description}</p>
+
+                        <p class="text-left-custom"><small class="text-muted">${dateFormat(item.createdAt).time} ${dateFormat(item.createdAt).date}</small></p>
                     </div>
                 </div>`)
                 .join("")
@@ -32,14 +33,14 @@ try{
     <div class="card p-2" style="max-width: 100%; height: 200px;">
     <div class="row g-0" style="height: 100%;">
       <div class="col-md-5" style="height: 100%;">
-            <img src="https://assets.codepen.io/6093409/mountains-6.jpg?width=200&format=auto" style="width: 95%; height: 100%; object-fit: cover;"
+            <img src="${item.image ? item.image : "https://assets.codepen.io/6093409/mountains-6.jpg?width=200&format=auto"}" style="width: 95%; height: 100%; object-fit: cover;"
         />
       </div>
       <div class="col-md-7">
         <div class="card-body">
-          <h5 class="card-title">${item.title}</h5>
+          <h5 class="card-title">${item.title.length > 20 ? item.title.slice(0,20) + "..." : item.title}</h5>
           <p class="card-text"><small class="text-muted">${dateFormat(item.createdAt).time} ${dateFormat(item.createdAt).date}</small></p>
-          <p class="card-text">${item.description.length > 100 ? item.description.slice(0,100) + "..." : item.description}</p>
+          <p class="card-text">${item.description.length > 80 ? item.description.slice(0,80) + "..." : item.description}</p>
         </div>
         <div class="" style="color: black; 
                 margin-left: auto; 
@@ -53,3 +54,4 @@ try{
 }catch(err){
     console.log(err)
 }
+

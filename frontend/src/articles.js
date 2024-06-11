@@ -20,11 +20,17 @@ try{
     rightContent.innerHTML = articles.map(item => `
                 <div class="card" style="background-color: #e3eefd;">
                     <div class="card-body">
-                        <h6 class="card-title">${item?.title.length > 20 ? item.title.slice(0,20) + "..." : item.title}</h6>
-                        <p class="card-text">${item.description.length > 50 ? item.description.slice(0,50) + "..." : item.description}</p>
+                        <a class="main-right-item" href="./articleById.html?id=${item._id}" style="color:black;  text-decoration: none !important; cursor:pointer;">
+                        <p class="text-left-custom" style="color: #3CAAC8;  margin-top: 2px;">${dateFormat(item.createdAt).time}</p>
+                        <p class="card-text" style="font-size:16 px; }">${item.description.length > 100 ? item.description.slice(0,100) + "..." : item.description}</p>
 
-                        <p class="text-left-custom"><small class="text-muted">${dateFormat(item.createdAt).time} ${dateFormat(item.createdAt).date}</small></p>
                     </div>
+                    <style>
+                    .card-text:hover{
+                      color: #3CAAC8; 
+                      cursor: pointer;
+                    }
+                    </style>
                 </div>`)
                 .join("")
                 
@@ -38,9 +44,9 @@ try{
       </div>
       <div class="col-md-7">
         <div class="card-body">
-          <h5 class="card-title">${item.title.length > 20 ? item.title.slice(0,20) + "..." : item.title}</h5>
+          <h5 class="card-title style="font-size:20 px;">${item.title.length > 20 ? item.title.slice(0,20) + "..." : item.title}</h5>
           <p class="card-text"><small class="text-muted">${dateFormat(item.createdAt).time} ${dateFormat(item.createdAt).date}</small></p>
-          <p class="card-text">${item.description.length > 80 ? item.description.slice(0,80) + "..." : item.description}</p>
+          <p class="card-text" style="font-size:16 px;">${item.description.length > 80 ? item.description.slice(0,80) + "..." : item.description}</p>
         </div>
         <div class="" style="color: black; 
                 margin-left: auto; 

@@ -28,18 +28,24 @@
             height: auto;
             border-radius: 4px;
         }
-        .navbar{
+        .site-icon {
+    width: 110px; /* Adjust the width as needed */
+    height: 110px; /* Adjust the height as needed */
+   margin-right: 10px;
+   margin-left: 10px /* Adjust the spacing between the icon and title */
+}
+.navbar{
         background-color: rgb(255, 255, 255);
         border-bottom: 1px solid rgba(211, 211, 211, 0.517);
     
         }
-
     </style>
 </head>
 <body>
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg ">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container">
+            <img class="site-icon" src="./fsr_logo-removebg-preview.png">
         <a class="navbar-brand" href="./">Journal FSR</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -61,15 +67,15 @@
                 <div style="margin-left: -110px;" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <a style="font-size: 13px;" class="dropdown-item" href="./profile.html">Profile</a>
                     <a style="font-size: 13px;" class="dropdown-item" href="#">abounez-vous</a>
-                    <a id="logout-btn" style="font-size: 13px;" class="dropdown-item">logOut</a>
+                    <a id="logout-btn" style="font-size: 13px;" class="dropdown-item">Deconnceter</a>
                 </div>
             </div>
 
 
             <div id="auth-btns">
                 <form class="d-flex">
-                    <a type="button" href="./login.html" style="color: black; font-family: Montserrat;" class="nav-btn">Connecter-vous</a>
-                    <a type="button" href="./register.html" class="btn nav-btn mx-1" style="background-color: #fe9a2e; font-family: Montserrat;">S'inscrire</a>
+                    <a type="button" href="./login.html" style="color: black; font-family: Montserrat;" class="nav-btn">Se connecter</a>
+                    <a type="button" href="./register.html" class="btn nav-btn mx-1" style="background-color: #000000; color: rgb(255, 255, 255); font-family: Montserrat;">S'inscrire</a>
                 </form>
             </div>
 
@@ -92,7 +98,7 @@
         <div class="col-md-3">
             
             <div  class="p-2 " style=" height: 600px; overflow-y: scroll; background-color: rgb(227,238,254); border-radius: 5px;">
-               <h2 style="border-bottom: 2px solid black;" class="pb-2 mb-2">Flash news</h2>
+               <h2 style="border-bottom: 2px solid black;" class="pb-2 mb-2">Flash infos</h2>
                <div class="article-right">
                 <p class="text-center">Loading ...</p> 
                 <!-- Add more cards without images here -->

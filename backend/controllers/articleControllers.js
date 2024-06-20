@@ -1,5 +1,7 @@
 const { isValidObjectId } = require("mongoose");
 const Article = require("../models/articleModels");
+const User = require('../models/userModels')
+
 //postArticle
 const postArticle = async (req,res)=>{
     try{
@@ -246,9 +248,17 @@ const lastArticles = async (req, res) => {
             message: "id error!"
         })
       }
+      const isAdmin = await User.findById(userId)
 
-      const articles = await Article.find({owner: userId})
-                                        .select("_id description title createdAt")
+      let articles = []
+      if(isAdmin.role == "admin"){
+            articles = await Article.find()
+                                .select("_id description title createdAt")
+      }else{
+          
+            articles = await Article.find({owner: userId})
+                                           .select("_id description title createdAt")
+    }
    
     res.status(200).json(articles)
     }catch(Error){  

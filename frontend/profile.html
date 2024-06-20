@@ -48,6 +48,19 @@
             background-color: rgb(255, 255, 255);
             border-bottom: 1px solid rgba(211, 211, 211, 0.517);
 }
+.navLink{
+            display: flex;
+            gap: 10px; 
+        }
+        .submitBtn {
+            background-color: #000000;
+            border-color: #000000;
+        }
+        .submitBtn:hover{
+            background-color:rgb(255, 255, 255);
+            border-color: #000000;
+            color:#000000
+        }
     </style>
 </head>
 <body>
@@ -62,15 +75,15 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item" id="nav-item">
-                <a class="nav-link active" aria-current="page" href="./createArticle.html">Creer Article</a>
+                <li class="nav-item navLink" id="nav-item" >
+                    <!-- create article -->
                 </li>
             </ul>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item" id="nav-item">
-                    <a class="nav-link active" aria-current="page" href="./journalisteArticles.html">Mes Article</a>
-                    </li>
+                    <li class="nav-item navLink" id="nav-item">        
+                                  <!--  articles  -->
+                          </li>
                 </ul>
             <!-- <button style="background-color: #444444; padding: 8px 15px; border-radius: 50%;" class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="bi bi-person-circle"></i>
@@ -95,7 +108,7 @@
             <div id="auth-btns">
                 <form class="d-flex">
                     <a type="button" href="./login.html" style="color: black; font-family: Montserrat;" class="nav-btn">Connectez-vous</a>
-                    <a type="button" href="./register.html" class="btn nav-btn mx-1" style="background-color: #fe9a2e; font-family: Montserrat;">S'inscrire</a>
+                    <a type="button" href="./register.html" class="btn nav-btn mx-1" style="background-color: #000000; color: rgb(255, 255, 255); font-family: Montserrat;">S'inscrire</a>
                 </form>
             </div>
 
@@ -139,7 +152,7 @@
                         <option value="Visiteur">Visiteur</option>
                     </select>
                 </div> -->
-                <button type="submit" class="btn btn-primary submitBtn">Envoyer</button>
+                <button type="submit" class="btn btn-primary submitBtn" style="">Envoyer</button>
             </form>
         </div>
     </div>

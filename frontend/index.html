@@ -38,7 +38,7 @@
                 </button>
                 <div style="margin-left: -110px;" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <a style="font-size: 13px;" class="dropdown-item" href="./profile.html">Profile</a>
-                    <a style="font-size: 13px;" class="dropdown-item" href=".abonnement.html">abounez-vous</a>
+                    <a style="font-size: 13px;" class="dropdown-item" href="./abonnement.html">abounez-vous</a>
                     <a id="logout-btn" style="font-size: 13px;" class="dropdown-item">Deconnecter</a>
                 </div>
             </div>
@@ -46,12 +46,20 @@
 
             <div id="auth-btns">
                 <form class="d-flex">
-                    <a type="button" href="./login.html" style="color: black;" class="nav-btn">Se Connecter</a>
-                    <a type="button" href="./register.html" class="btn nav-btn btn-dark mx-1">S'inscrire</a>
-                </form>
-            </div>
-
-          </div>
+                    <!-- <a type="button" href="./login.html" style="color: black;" class="nav-btn">Se Connecter</a>
+                    <a type="button" href="./register.html" class="btn nav-btn btn-dark mx-1">S'inscrire</a>-->
+                    
+                      <ul class="ml-auto" style="margin-top: 17px;">
+                          <li class="nav-item" style="margin-right: 0px; list-style: none;">
+                              <a href="./login.html" class="nav-btn btn" style="color: black; display: inline-block;">Se Connecter</a>
+                              <a href="./register.html" class="btn nav-btn btn-dark mx-1" style="display: inline-block;">S'inscrire</a>
+                          </li>
+                          <li class="nav-item" style="margin-left: 80px; margin-top: 5px; list-style: none;">
+                              <a href="./logInAdmin.html" class="btn nav-btn mx-2" style="background-color: rgb(214, 234, 243); display: inline-block;">Admin</a>
+                          </li>
+                      </ul>
+                 
+                </form> 
         </div>
       </nav>
     <!-- navbar end -->

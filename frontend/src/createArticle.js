@@ -1,6 +1,9 @@
 import { createArticles } from "../api/article.js";
 import { convertToBase64 } from "../utils/convertToBase64.js";
 import { isAuth } from "../utils/isAuth.js";
+import { requireAuth } from "../utils/requireAuth.js";
+
+requireAuth()
 
 const submit = document.getElementsByClassName('saveBtn')[0];
 

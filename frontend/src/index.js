@@ -2,6 +2,7 @@ import { getAcrticles,
          getLastAcrticle } from "../api/article.js";
 import { getCategories } from "../api/category.js";
 import { dateFormat } from "../utils/dateFormate.js";
+import { showLoader, hideLoader } from '../utils/loader.js';
 
 const rightContent = document.getElementsByClassName("main-right-content")[0]
 const categorySection = document.getElementById("category-list")
@@ -10,12 +11,12 @@ const midContent = document.getElementsByClassName("main-mid-section")[0]
 
 
 try{
-
+    showLoader()
     let articles = await getAcrticles()
     let categories =  await getCategories()
     let {lastArticleArr} = await getLastAcrticle()
     let { lastPost} = await getLastAcrticle()
-
+    hideLoader()
     
     console.log(lastPost)
 

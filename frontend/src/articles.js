@@ -16,6 +16,7 @@ try{
     let articles = await getAcrticles()
     let articleByCat = await acrticlesByCategory(categoryId)
 
+    
 
     rightContent.innerHTML = articles.map(item => `
                 <div class="card" style="background-color: #e3eefd;">

@@ -24,3 +24,5 @@ export const updateUser = async (userData) => {
         console.log(err)
     }
 }
+
+

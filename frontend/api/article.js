@@ -153,7 +153,7 @@ export const getArticleByUserId = async (userId) => {
         console.log(err)
     }
 }
-export const deleteArticaleById = async (userId) => {
+export const deleteArticaleById = async (articleId) => {
     try{
 
         const res = await fetch(`http://localhost:4000/api/article/delete/${articleId}`, {

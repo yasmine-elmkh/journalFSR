@@ -15,10 +15,10 @@ try{
     let articles = await getAcrticles()
     let categories =  await getCategories()
     let {lastArticleArr} = await getLastAcrticle()
-    let { lastPost} = await getLastAcrticle()
+    let { lastPost } = await getLastAcrticle()
     hideLoader()
     
-    console.log(lastPost)
+    console.log("lastPost : ", lastPost)
 
     // show data in main right section 
     rightContent.innerHTML = articles.map(item => `
@@ -37,7 +37,7 @@ try{
         `
     )
     .join("")
-
+console.log("last art : ", lastArticleArr)
     // show data in letf section
     leftContent.innerHTML = lastArticleArr.map(item => `
     <a href="./articleById.html?id=${item._id}" style="color:black;  text-decoration: none !important; cursor:pointer;" class="last-post-by-category-item">

@@ -142,7 +142,6 @@ const showAllArticles = async (req,res)=>{
         const allArticles = await Article.find()
                                         .sort({ createdAt: -1 })
                                         .limit(7);
-        console.log(allArticles); 
 
     if(!allArticles || allArticles.length < 1){
         return res.status(403).json({
@@ -194,28 +193,29 @@ const lastArticles = async (req, res) => {
                                     .sort({ createdAt: -1 })
                                     .limit(1)
                                     .populate("category","_id title description")
-
+  
         const a = await Article.find({category: "665648cc20d44203fc9f6a19"}) // Editorial
                                 .sort({ createdAt: -1 })
                                 .limit(1)
                                 .populate("category","_id title description")
-
+                                console.log("a : ",a )
         const b = await Article.find({category: "6656490f20d44203fc9f6a25"}) //Culture et loisirs
 
                                 .sort({ createdAt: -1 })
                                 .limit(1)
                                 .populate("category","_id title description")
+                                console.log("b : ",b )
 
         const c = await Article.find({category: "6656493220d44203fc9f6a2e"}) //Carrières et développement personnel
                                 .sort({ createdAt: -1 })
                                 .limit(1)
                                 .populate("category","_id title description")
-
+                                console.log("c : ",c )
         const d = await Article.find({category: "6656490420d44203fc9f6a22"}) //Tech talks
                                 .sort({ createdAt: -1 })
                                 .limit(1)
                                 .populate("category","_id title description")
-
+                                console.log("d : ",d )
         let lastArticleArr = []
         if(a || a.length > 0){
             lastArticleArr = [...lastArticleArr, ...a]
@@ -233,7 +233,7 @@ const lastArticles = async (req, res) => {
             lastArticleArr = [...lastArticleArr, ...d]
         }
         
-        console.log(lastArticleArr)
+        console.log("lastArticleArr : ",lastArticleArr )
 
         res.status(200).json({lastArticleArr, lastPost: lastPost[0]})
     }catch(err){

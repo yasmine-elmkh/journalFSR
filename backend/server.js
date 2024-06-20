@@ -4,9 +4,11 @@ const bodyParser = require('body-parser');
 const cors = require("cors")
 const cookieParser = require('cookie-parser');
 
+
+require('dotenv').config()
 const app = express() 
 
-mongoose.connect("mongodb+srv://yasminrelmkhantar:YbjL1cpmrKQ0Nowy@cluster0.d9quy9i.mongodb.net/journalFSR", {
+mongoose.connect(process.env.DB, {
     useNewUrlParser: true,
 })
 .then(() => console.log("db is connected"))

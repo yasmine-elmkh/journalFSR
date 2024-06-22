@@ -9,8 +9,8 @@ console.log("is auth : ", isAuth())
 if(isAuth()){
     if(isAuth().role == "Journalist" && window.location.pathname.split("/").includes("profile.html")){
         navLink.innerHTML = `
-            <a class="nav-link active" aria-current="page" href="./createArticle.html">Create Article</a>
-            <a class="nav-link active" aria-current="page" href="./journalisteArticles.html">Mes Article</a>
+            <a class="nav-link active" aria-current="page" href="./createArticle.html">Créer article</a>
+            <a class="nav-link active" aria-current="page" href="./journalisteArticles.html">Mes articles</a>
             `
             
     }else if(isAuth().role == "Visiteur" && window.location.pathname.split("/").includes("profile.html")){
@@ -19,11 +19,10 @@ if(isAuth()){
     }
     else if(isAuth().role == "admin" && window.location.pathname.split("/").includes("profile.html")){
         navLink.innerHTML = `
-        <a class="nav-link active" aria-current="page" href="./crateCategory.html" >Ceer categorie</a>
-        <a class="nav-link active" aria-current="page" href="./categorys.html" >Categories</a>
+        <a class="nav-link active" aria-current="page" href="./crateCategory.html" >Créer catégorie</a>
+        <a class="nav-link active" aria-current="page" href="./categorys.html" >Catégories</a>
         <a class="nav-link active" aria-current="page" href="./users.html" >Utilisateurs</a>
-        <a class="nav-link active" aria-current="page" href="./adminContacte.html" >Contacter les Journalistes</a>`
-
+        <a class="nav-link active" aria-current="page" href="./adminContacte.html" >Contacter les journalistes</a>`
     }
 
     navToggle.classList.add("displayBlock")

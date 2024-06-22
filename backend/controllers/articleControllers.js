@@ -194,7 +194,7 @@ const lastArticles = async (req, res) => {
                                     .limit(1)
                                     .populate("category","_id title description")
   
-        const a = await Article.find({category: "665648cc20d44203fc9f6a19"}) // Editorial
+        const a = await Article.find({category: "665648cc20d44203fc9f6a19"}) // orial
                                 .sort({ createdAt: -1 })
                                 .limit(1)
                                 .populate("category","_id title description")

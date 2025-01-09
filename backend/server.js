@@ -39,7 +39,7 @@ app.get("/",async (req, res) => {
 })
 
 
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 1000;
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);

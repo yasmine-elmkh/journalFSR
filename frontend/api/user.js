@@ -1,7 +1,7 @@
 export const updateUser = async (userData) => {
     try{
         console.log("userData : ", userData)
-        const response = await fetch("http://localhost:4000/api/user/update", {
+        const response = await fetch("https://fsrjournal.onrender.com/api/user/update", {
             method: "PUT",
             mode: "cors",
             cache: "no-cache",

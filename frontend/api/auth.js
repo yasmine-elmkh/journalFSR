@@ -1,6 +1,6 @@
 export const login = async (email, password) => {
     try{
-        const response = await fetch("http://localhost:4000/api/auth/signin", {
+        const response = await fetch("https://fsrjournal.onrender.com/api/auth/signin", {
             method: "POST",
             mode: "cors",
             cache: "no-cache",
@@ -27,7 +27,7 @@ export const login = async (email, password) => {
 
 export const register = async (userData) => {
     try{
-        const response = await fetch("http://localhost:4000/api/auth/signup", {
+        const response = await fetch("https://fsrjournal.onrender.com/api/auth/signup", {
                 method: "POST", // *GET, POST, PUT, DELETE, etc.
                 mode: "cors", // no-cors, *cors, same-origin
                 cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached

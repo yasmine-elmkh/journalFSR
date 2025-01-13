@@ -1,7 +1,7 @@
 export const getCategories = async () => {
     try{
 
-        const res = await fetch("http://localhost:4000/api/category/allCategory", {
+        const res = await fetch("https://fsrjournal.onrender.com/api/category/allCategory", {
             method: "GET",
             mode: "cors",
             cache: "no-cache",
@@ -26,7 +26,7 @@ export const createCategorie = async (categorieData) => {
     try{
 
         console.log(categorieData)
-        const res = await fetch("http://localhost:4000/api/category/create", {
+        const res = await fetch("https://fsrjournal.onrender.com/api/category/create", {
             method: "POST",
             mode: "cors",
             cache: "no-cache",
@@ -52,7 +52,7 @@ export const createCategorie = async (categorieData) => {
 export const deleteCategorie = async () => {
     try{
 
-        const res = await fetch("http://localhost:4000/api/category/delete", {
+        const res = await fetch("https://fsrjournal.onrender.com/api/category/delete", {
             method: "DELETE",
             mode: "cors",
             cache: "no-cache",
@@ -76,7 +76,7 @@ export const deleteCategorie = async () => {
 export const updateCategorie = async () => {
     try{
 
-        const res = await fetch("http://localhost:4000/api/category/update", {
+        const res = await fetch("https://fsrjournal.onrender.com/api/category/update", {
             method: "PUT",
             mode: "cors",
             cache: "no-cache",

@@ -2,7 +2,7 @@
 export const  createArticles = async (articleData) => {
     try{
 console.log(articleData)
-        const res = await fetch("http://localhost:4000/api/article/create", {
+        const res = await fetch("https://fsrjournal.onrender.com/api/article/create", {
             method: "POST",
             mode: "cors",
             cache: "no-cache",
@@ -29,7 +29,7 @@ console.log(articleData)
 export const getAcrticles = async () => {
     try{
 
-        const res = await fetch("http://localhost:4000/api/article/articles", {
+        const res = await fetch("https://fsrjournal.onrender.com/api/article/articles", {
             method: "GET",
             mode: "cors",
             cache: "no-cache",
@@ -54,7 +54,7 @@ export const getAcrticles = async () => {
 export const getLastAcrticle = async () => {
     try{
 
-        const res = await fetch("http://localhost:4000/api/article/last-by-category", {
+        const res = await fetch("https://fsrjournal.onrender.com/api/article/last-by-category", {
             method: "GET",
             mode: "cors",
             cache: "no-cache",
@@ -80,7 +80,7 @@ export const getLastAcrticle = async () => {
 export const acrticlesByCategory = async (articleId) => {
     try{
 
-        const res = await fetch(`http://localhost:4000/api/article/article-by-category/${articleId}`, {
+        const res = await fetch(`https://fsrjournal.onrender.com/api/article/article-by-category/${articleId}`, {
             method: "GET",
             mode: "cors",
             cache: "no-cache",
@@ -105,7 +105,7 @@ export const acrticlesByCategory = async (articleId) => {
 export const acrticlesById = async (articleId) => {
     try{
 
-        const res = await fetch(`http://localhost:4000/api/article/by-id/${articleId}`, {
+        const res = await fetch(`https://fsrjournal.onrender.com/api/article/by-id/${articleId}`, {
             method: "GET",
             mode: "cors",
             cache: "no-cache",
@@ -130,7 +130,7 @@ export const acrticlesById = async (articleId) => {
 export const getArticleByUserId = async (userId) => {
     try{
 
-        const res = await fetch(`http://localhost:4000/api/article/myArticles/${userId}`, {
+        const res = await fetch(`https://fsrjournal.onrender.com/api/article/myArticles/${userId}`, {
             method: "GET",
             mode: "cors",
             cache: "no-cache",
@@ -156,7 +156,7 @@ export const getArticleByUserId = async (userId) => {
 export const deleteArticaleById = async (articleId) => {
     try{
 
-        const res = await fetch(`http://localhost:4000/api/article/delete/${articleId}`, {
+        const res = await fetch(`https://fsrjournal.onrender.com/api/article/delete/${articleId}`, {
             method: "DELETE",
             mode: "cors",
             cache: "no-cache",

@@ -2,7 +2,7 @@ export const isAdmin = async (userInfo) => {
     try{
 
         console.log("userData : ", userInfo)
-        const response = await fetch("http://localhost:4000/api/admin/user", {
+        const response = await fetch("https://fsrjournal.onrender.com/api/admin/user", {
             method: "POST",
             mode: "cors",
             cache: "no-cache",
@@ -30,7 +30,7 @@ export const deleteUserById = async (userData) => {
 
             console.log("userData : ", userData)
 
-            const res = await fetch(`http://localhost:4000/api/admin/deleteUser`, {
+            const res = await fetch(`https://fsrjournal.onrender.com/api/admin/deleteUser`, {
                 method: "GET",
                 mode: "cors",
                 cache: "no-cache",
@@ -58,7 +58,7 @@ export const deleteUserById = async (userData) => {
 export const getUsers = async () => {
     try {
         
-        const response = await fetch("http://localhost:4000/api/admin/users", {
+        const response = await fetch("https://fsrjournal.onrender.com/api/admin/users", {
             method: "GET",
             mode: "cors",
             cache: "no-cache",

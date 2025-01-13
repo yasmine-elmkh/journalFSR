@@ -9,7 +9,7 @@ require('dotenv').config()
 const app = express() 
 
 mongoose.connect(process.env.DB, {
-    useNewUrlParser: true,
+
 })
 .then(() => console.log("db is connected"))
 .catch((err) => console.log("db is not connected ... !", err))
@@ -17,7 +17,12 @@ mongoose.connect(process.env.DB, {
 // middlewares
 // app.use(bodyParser.json())
 app.use(bodyParser.json({ limit: '50mb' }));
-app.use(cors())
+// app.use(cors())
+app.use(cors({
+    origin: 'https://fsrjournal.onrender.com', // Replace with the actual frontend URL
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+}));
 app.use(cookieParser())
 
 // routes

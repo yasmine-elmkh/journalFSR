@@ -20,6 +20,7 @@ app.use(bodyParser.json({ limit: '50mb' }));
 // app.use(cors())
 app.use(cors({
     origin: 'https://fsrjournal.onrender.com', // Replace with the actual frontend URL
+    origin: 'https://journalfsr.netlify.app', // Replace with the actual frontend URL
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
 }));
@@ -44,7 +45,7 @@ app.get("/",async (req, res) => {
 })
 
 
-const port = process.env.PORT || 1000;
+const port = process.env.PORT || 4000;
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
